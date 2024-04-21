@@ -8,6 +8,8 @@ Route::get('/', function () {
     return view('layouts.app');
 });
 
+Route::get('/home',[HomeController::class, 'Index'])->name('home');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
