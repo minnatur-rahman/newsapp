@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Backend\AdminController;
+use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -9,7 +10,7 @@ Route::get('/', function () {
     return view('layouts.app');
 });
 
-Route::get('/home',[HomeController::class, 'Index'])->name('home');
+Route::get('/home',[HomeController::class, 'Index'])->middleware(['auth', 'admin'])->name('home');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -24,3 +25,5 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 Route::get('admin/dashboard', [AdminController::class, 'Index'])->middleware(['auth', 'admin']);
+
+Route::get('/category', [CategoryController::class, 'Index']);
