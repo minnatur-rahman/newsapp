@@ -24,6 +24,6 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('admin/dashboard', [AdminController::class, 'Index'])->middleware(['auth', 'admin']);
+Route::get('/admin/dashboard', [AdminController::class, 'Index'])->middleware(['auth', 'admin']);
 
-Route::get('/categories', [CategoryController::class, 'index'])->name('categories');
+Route::get('/admin/categories', [CategoryController::class, 'index'])->name('categories');
