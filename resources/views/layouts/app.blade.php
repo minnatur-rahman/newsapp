@@ -382,9 +382,9 @@
           <!-- ./col -->
         </div>
         <!-- /.row -->
-        <div class="container">
+
             @yield('content')
-        </div>
+
         <!-- /.row (main row) -->
       </div><!-- /.container-fluid -->
     </section>
