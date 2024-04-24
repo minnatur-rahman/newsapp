@@ -7,7 +7,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('backend.layouts.layout');
+    return view('welcome');
 });
 
 // Route::get('/home',[HomeController::class, 'Index'])->middleware(['auth', 'admin'])->name('home');
