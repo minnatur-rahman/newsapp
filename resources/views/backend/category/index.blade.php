@@ -22,7 +22,7 @@
 <div class="card">
     <div class="card-header">
       <h3 class="card-title">Categories Table</h3>
-      <button class="btn btn-danger btn-sm" style="float:right">Add New</button>
+      <button class="btn btn-danger btn-sm" style="float:right" data-toggle="modal" data-target="#modal-default">Add New</button>
     </div>
     <!-- /.card-header -->
     <div class="card-body">
@@ -458,5 +458,29 @@
     </div>
     <!-- /.card-body -->
   </div>
+
+  <!--modal category-->
+
+    <div class="modal fade" id="modal-default">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Default Modal</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>One fine body&hellip;</p>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
 
 @endsection
