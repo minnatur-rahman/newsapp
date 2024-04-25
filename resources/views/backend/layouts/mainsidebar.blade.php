@@ -75,10 +75,9 @@
 
           <li class="nav-header">LABELS</li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-
-               <div class="text-center">
+            <div class="text-center">
                 <form method="POST" action="{{ route('logout') }}">
+                    <i class="nav-icon far fa-circle text-danger"></i>
                     @csrf
 
                     <x-responsive-nav-link :href="route('logout')"
@@ -87,9 +86,7 @@
                         {{ __('Log Out') }}
                     </x-responsive-nav-link>
                 </form>
-               </div>
-
-            </a>
+            </div>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
