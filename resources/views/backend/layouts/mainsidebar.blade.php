@@ -74,20 +74,7 @@
 
 
           <li class="nav-header">LABELS</li>
-          <li class="nav-item">
-            <div class="text-center">
-                <form method="POST" action="{{ route('logout') }}">
-                    <i class="nav-icon far fa-circle text-danger"></i>
-                    @csrf
 
-                    <x-responsive-nav-link :href="route('logout')"
-                            onclick="event.preventDefault();
-                                        this.closest('form').submit();">
-                        {{ __('Log Out') }}
-                    </x-responsive-nav-link>
-                </form>
-            </div>
-          </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon far fa-circle text-warning"></i>
@@ -99,6 +86,20 @@
               <i class="nav-icon far fa-circle text-info"></i>
               <p>Informational</p>
             </a>
+          </li>
+          <li class="nav-item">
+            <div class="text-center">
+                <form method="POST" action="{{ route('logout') }}">
+                    {{-- <i class="nav-icon far fa-circle text-danger"></i> --}}
+                    @csrf
+
+                    <x-responsive-nav-link :href="route('logout')"
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        {{ __('Log Out') }}
+                    </x-responsive-nav-link>
+                </form>
+            </div>
           </li>
         </ul>
       </nav>
