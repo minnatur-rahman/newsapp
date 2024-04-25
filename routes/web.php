@@ -31,7 +31,12 @@ Route::middleware(['auth', 'admin'])->group(function () {
         // Route::get('/admin/login', 'Login');
     });
 
-Route::get('/admin/categories', [CategoryController::class, 'Index'])->name('categories');
+    Route::controller(CategoryController::class)->group(function(){
+        Route::get('/admin/categories','Index')->name('categories');
+        Route::post('/admin/categories/store','Store')->name('category.store');
+    });
+
+
 
 
 
