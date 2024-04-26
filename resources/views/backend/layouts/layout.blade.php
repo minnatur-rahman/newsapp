@@ -31,25 +31,42 @@
 
     <link rel="stylesheet" href="{{ asset('backend') }}/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
     <style>
-        /* import Swal from 'sweetalert2'
-        import './styles.css' */
 
-        const Toast=Swal.mixin({
+.colored-toast.swal2-icon-success {
+  background-color: #a5dc86 !important;
+}
 
-            toast: true,
-            position: 'center',
-            iconColor: 'white',
-            customClass: {
-                popup: 'colored-toast',
-            }
+.colored-toast.swal2-icon-error {
+  background-color: #f27474 !important;
+}
 
-            ,
-            showConfirmButton: false,
-            timer: 1500,
-            timerProgressBar: true,
-        });
+.colored-toast.swal2-icon-warning {
+  background-color: #f8bb86 !important;
+}
+
+.colored-toast.swal2-icon-info {
+  background-color: #3fc3ee !important;
+}
+
+.colored-toast.swal2-icon-question {
+  background-color: #87adbd !important;
+}
+
+.colored-toast .swal2-title {
+  color: white;
+}
+
+.colored-toast .swal2-close {
+  color: white;
+}
+
+.colored-toast .swal2-html-container {
+  color: white;
+}
 
 
     </style>

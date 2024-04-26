@@ -71,31 +71,28 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    @if(session('success'))
-                         <script>
-                              (async ()=> {
-                await Toast.fire({
+                    @if (session('success'))
+                        <script>
+                            const Toast = Swal.mixin({
+                                toast: true,
+                                position: 'center',
+                                iconColor: 'white',
+                                customClass: {
+                                    popup: 'colored-toast',
+                                },
+                                showConfirmButton: false,
+                                timer: 1500,
+                                timerProgressBar: true,
+                            })
 
-                    icon: 'success',
-                    title: 'Success',
-                }) await Toast.fire({
 
-                icon: 'error',
-                title: 'Error',
-            }) await Toast.fire({
-
-            icon: 'warning',
-            title: 'Warning',
-        }) await Toast.fire({
-
-            icon: 'info',
-            title: 'Info',
-        }) await Toast.fire({
-            icon: 'question',
-            title: 'Question',
-        })
-        })()
-                         </script>
+                            (async () => {
+                                        await Toast.fire({
+                                            icon: 'success',
+                                            title: '{{ session('success') }}',
+                                        })
+                                    });
+                        </script>
 
                         <div class="alert alert-success">
                             {{ session('success') }}
@@ -105,20 +102,23 @@
                         @csrf
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Category Name Bangla</label>
-                            <input type="text" name="category_bn" class="form-control @error('category_bn') is-invalid @enderror" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <input type="text" name="category_bn"
+                                class="form-control @error('category_bn') is-invalid @enderror" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
                             @error('category_bn')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                             @enderror
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Category Name English</label>
-                            <input type="text" name="category_en" class="form-control @error('category_en') is-invalid @enderror" id="exampleInputPassword1">
+                            <input type="text" name="category_en"
+                                class="form-control @error('category_en') is-invalid @enderror" id="exampleInputPassword1">
                             @error('category_en')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                             @enderror
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
