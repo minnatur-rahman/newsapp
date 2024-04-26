@@ -32,8 +32,31 @@
     <link rel="stylesheet" href="{{ asset('backend') }}/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
 
 
+    <style>
+        /* import Swal from 'sweetalert2'
+        import './styles.css' */
+
+        const Toast=Swal.mixin({
+
+            toast: true,
+            position: 'center',
+            iconColor: 'white',
+            customClass: {
+                popup: 'colored-toast',
+            }
+
+            ,
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true,
+        });
 
 
+    </style>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
 </head>

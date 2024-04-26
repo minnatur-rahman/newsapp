@@ -71,6 +71,36 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    @if(session('success'))
+                         <script>
+                              (async ()=> {
+                await Toast.fire({
+
+                    icon: 'success',
+                    title: 'Success',
+                }) await Toast.fire({
+
+                icon: 'error',
+                title: 'Error',
+            }) await Toast.fire({
+
+            icon: 'warning',
+            title: 'Warning',
+        }) await Toast.fire({
+
+            icon: 'info',
+            title: 'Info',
+        }) await Toast.fire({
+            icon: 'question',
+            title: 'Question',
+        })
+        })()
+                         </script>
+
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
                     <form action="{{ route('category.store') }}" method="POST">
                         @csrf
                         <div class="mb-3">
