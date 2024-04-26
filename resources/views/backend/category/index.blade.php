@@ -40,8 +40,8 @@
                             <td>{{ $row->category_bn }}</td>
                             <td>{{ $row->category_en }}</td>
                             <td>
-                                <a href="" class="btn btn-info"><i class="fa fa-pencil">Edit</i></a>
-                                <a href="" class="btn btn-danger"><i class="fa fa-trash">Delete</i></a>
+                                <a href="" class="btn btn-info"><i class="fa fa-edit"></i></a>
+                                <a href="" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                             </td>
 
                         </tr>
@@ -77,8 +77,8 @@
                             <label for="exampleInputEmail1" class="form-label">Category Name Bangla</label>
                             <input type="text" name="category_bn" class="form-control @error('category_bn') is-invalid @enderror" id="exampleInputEmail1" aria-describedby="emailHelp">
                             @error('category_bn')
-                            <span class="invalide-feedback" role="alert">
-                                <strong>{{ message }}</strong>
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
                             </span>
                             @enderror
                         </div>
@@ -86,8 +86,8 @@
                             <label for="exampleInputPassword1" class="form-label">Category Name English</label>
                             <input type="text" name="category_en" class="form-control @error('category_en') is-invalid @enderror" id="exampleInputPassword1">
                             @error('category_en')
-                            <span class="invalide-feedback" role="alert">
-                                <strong>{{ message }}</strong>
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
                             </span>
                             @enderror
                         </div>
