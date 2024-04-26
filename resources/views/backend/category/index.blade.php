@@ -75,11 +75,11 @@
                         @csrf
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Category Name Bangla</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <input type="text" name="category_bn" class="form-control @error('category_bn') is-invalid @enderror" id="exampleInputEmail1" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Category Name English</label>
-                            <input type="text" class="form-control" id="exampleInputPassword1">
+                            <input type="text" name="category_en" class="form-control @error('category_en') is-invalid @enderror" id="exampleInputPassword1">
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
