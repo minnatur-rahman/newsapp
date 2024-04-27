@@ -32,8 +32,9 @@ Route::middleware(['auth', 'admin'])->group(function () {
     });
 
     Route::controller(CategoryController::class)->group(function(){
-        Route::get('/admin/categories','Index')->name('categories');
-        Route::post('/admin/categories/store','Store')->name('category.store');
+        Route::get('/admin/category','Index')->name('categories');
+        Route::post('/admin/category/store','Store')->name('category.store');
+        Route::get('/category/delete/{id}','Destroy')->name('category.delete');
     });
 
 

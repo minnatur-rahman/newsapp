@@ -41,7 +41,7 @@
                             <td>{{ $row->category_en }}</td>
                             <td>
                                 <a href="" class="btn btn-info"><i class="fa fa-edit"></i></a>
-                                <a href="{{ route('category.delete',$row->id) }}" class="btn btn-danger" id="delete"><i class="fa fa-trash"></i></a>
+                                <a href="{{ route('category.delete', $row->id) }}" class="btn btn-danger" id="delete"><i class="fa fa-trash"></i></a>
                             </td>
 
                         </tr>
@@ -71,7 +71,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    @if (session('success'))
+                    {{-- @if (session('success'))
                         <script>
                             const Toast = Swal.mixin({
                                 toast: true,
@@ -97,7 +97,7 @@
                         <div class="alert alert-success">
                             {{ session('success') }}
                         </div>
-                    @endif
+                    @endif --}}
                     <form action="{{ route('category.store') }}" method="POST">
                         @csrf
                         <div class="mb-3">
