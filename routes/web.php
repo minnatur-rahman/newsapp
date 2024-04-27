@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -32,10 +33,15 @@ Route::middleware(['auth', 'admin'])->group(function () {
     });
 
     Route::controller(CategoryController::class)->group(function(){
-        Route::get('/admin/category','Index')->name('categories');
-        Route::post('/admin/category/store','Store')->name('category.store');
-        Route::get('/category/delete/{id}','Destroy')->name('category.delete');
+        Route::get('/categories','Index')->name('categories');
+        Route::post('/categories/store','Store')->name('category.store');
+        Route::get('category/delete/{id}','destroy')->name('category.delete');
+
     });
+
+
+
+
 
 
 
