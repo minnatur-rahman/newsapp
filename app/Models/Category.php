@@ -8,9 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'category_bn',
-        'category_en',
-        'soft_delete',
-    ];
 }
