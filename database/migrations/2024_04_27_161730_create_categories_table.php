@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('category_en');
             $table->string('soft_delete')->nullable()->default(0);
             $table->timestamps();
-            $table->timestamps();
+
         });
     }
 

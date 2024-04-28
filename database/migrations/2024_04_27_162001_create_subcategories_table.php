@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('subcategory_bn');
             $table->string('subcategory_en');
             $table->timestamps();
-            $table->timestamps();
+
         });
     }
 
