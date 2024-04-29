@@ -40,7 +40,7 @@
                             <td>{{ $row->category_bn }}</td>
                             <td>{{ $row->category_en }}</td>
                             <td>
-                                <a href="" class="btn btn-info"><i class="fa fa-edit"></i></a>
+                                <a href="{{ route('category.edit',$row->id) }}" class="btn btn-info"><i class="fa fa-edit"></i></a>
                                 <a href="{{ route('category.delete',$row->id) }}" class="btn btn-danger" ><i class="fa fa-trash"></i></a>
                             </td>
 
