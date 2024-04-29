@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\SubcategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -32,6 +33,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
         // Route::get('/admin/login', 'Login');
     });
 
+
+    // category roue//
     Route::controller(CategoryController::class)->group(function(){
         Route::get('/categories','Index')->name('categories');
         Route::post('/categories/store','Store')->name('category.store');
@@ -40,6 +43,13 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::post('categories/update/{id}','Update')->name('category.update');
     });
 
+    // subcategory route
+    Route::controller(SubcategoryController::class)->group(function(){
+        Route::get('/subcategory', 'Index')->name('subcategory');
+
+
+
+    });
 
 
 

@@ -57,5 +57,27 @@ class CategoryController extends Controller
    }
 
 
+   public function Update(Request $request,$id)
+   {
+       $validated = $request->validate([
+            'category_bn' => 'required|max:55',
+            'category_en' => 'required|max:55',
+       ]);
+
+        DB::table('categories')->where('id',$id)->update([
+            'category_bn' => $request->category_bn,
+            'category_en' => $request->category_en,
+    ]);
+
+        toastr()->success('Data has been update successfully!', 'Congrats', ['timeOut' => 5000]);
+        return redirect()->route('categories');
+
+
+
+   }
+
+
+
+
 
 }
