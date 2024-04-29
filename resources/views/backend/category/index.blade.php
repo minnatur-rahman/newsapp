@@ -71,33 +71,6 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    {{-- @if (session('success'))
-                        <script>
-                            const Toast = Swal.mixin({
-                                toast: true,
-                                position: 'center',
-                                iconColor: 'white',
-                                customClass: {
-                                    popup: 'colored-toast',
-                                },
-                                showConfirmButton: false,
-                                timer: 1500,
-                                timerProgressBar: true,
-                            })
-
-
-                            (async () => {
-                                        await Toast.fire({
-                                            icon: 'success',
-                                            title: '{{ session('success') }}',
-                                        })
-                                    });
-                        </script>
-
-                        <div class="alert alert-success">
-                            {{ session('success') }}
-                        </div>
-                    @endif --}}
                     <form action="{{ route('category.store') }}" method="POST">
                         @csrf
                         <div class="mb-3">
