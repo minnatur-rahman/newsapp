@@ -35,7 +35,7 @@ class CategoryController extends Controller
        return redirect()->back();
  }
 
-   public function delete($id)
+   public function Destroy($id)
    {
 
 
@@ -50,8 +50,11 @@ class CategoryController extends Controller
         return redirect()->back();
    }
 
-
-
+   public function Edit($id)
+   {
+        $category = Category::find($id);
+        return view('backend.category.edit',compact('category'));
+   }
 
 
 
