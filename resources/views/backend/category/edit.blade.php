@@ -32,7 +32,7 @@
                     </div>
                     <div class="modal-body">
 
-                        <form action="{{ route('category.store') }}" method="POST">
+                        <form action="{{ route('category.update',$category->id) }}" method="POST">
                             @csrf
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Category Name Bangla</label>
