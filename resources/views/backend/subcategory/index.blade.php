@@ -38,8 +38,9 @@
                 <tbody>
                     @foreach ($sub as $row)
                         <tr>
-                            <td>{{ $row->category_bn }}</td>
-                            <td>{{ $row->category_en }}</td>
+                            <td>{{ $row->subcategory_bn }}</td>
+                            <td>{{ $row->subcategory_en }}</td>
+                            <td>{{ $row->category_id }}</td>
                             <td>
                                 <a href="{{ route('category.edit',$row->id) }}" class="btn btn-info"><i class="fa fa-edit"></i></a>
                                 <a href="{{ route('category.delete',$row->id) }}" class="btn btn-danger" ><i class="fa fa-trash"></i></a>
@@ -75,7 +76,7 @@
                     <form action="{{ route('category.store') }}" method="POST">
                         @csrf
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Category Name Bangla</label>
+                            <label for="exampleInputEmail1" class="form-label">SubCategory Name Bangla</label>
                             <input type="text" name="category_bn"
                                 class="form-control @error('category_bn') is-invalid @enderror" id="exampleInputEmail1"
                                 aria-describedby="emailHelp">
@@ -86,7 +87,7 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Category Name English</label>
+                            <label for="exampleInputPassword1" class="form-label">SubCategory Name English</label>
                             <input type="text" name="category_en"
                                 class="form-control @error('category_en') is-invalid @enderror" id="exampleInputPassword1">
                             @error('category_en')
@@ -95,6 +96,20 @@
                                 </span>
                             @enderror
                         </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Choose Category</label>
+                            <select class="form-control" name="category_id" required>
+                                <option disabled selected>==choose one==</option>
+                                @foreach ( $category as $row )
+                                    <option></option>
+                                @endforeach
+
+                            </select>
+
+                        </div>
+
+
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
