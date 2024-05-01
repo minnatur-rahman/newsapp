@@ -65,7 +65,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     //___Subdistrict Route___//
     Route::controller(SubdistrictController::class)->group(function(){
-
+        Route::get('/subdistrict', 'Index')->name('subdistricts');
 
 
     });
