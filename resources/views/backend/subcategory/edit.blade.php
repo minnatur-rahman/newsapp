@@ -36,7 +36,7 @@
                             @csrf
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">SubCategory Name Bangla</label>
-                                <input type="text" name="category_bn"
+                                <input type="text" name="subcategory_bn"
                                     class="form-control" value="{{ $sub->subcategory_bn }}"
                                     aria-describedby="emailHelp" required>
 
@@ -50,18 +50,14 @@
 
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Choose Category</label>
-                                <select class="form-control  @error('category_id') is-invalid @enderror" name="subcategory_id" required>
+                                <select class="form-control" name="category_id" required>
                                     <option disabled selected>==Choose One==</option>
                                     @foreach ( $category as $row )
                                         <option value="{{ $row->id }}" <?Php if($row->id == $sub->category_id) echo "selected"; ?> >{{ $row->category_bn }} | {{ $row->category_en }}</option>
                                     @endforeach
 
                                 </select>
-                                @error('category_id')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
+
                             </div>
 
 
