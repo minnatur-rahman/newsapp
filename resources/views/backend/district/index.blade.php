@@ -41,7 +41,7 @@
                             <td>{{ $row->district_en }}</td>
                             <td>
                                 <a href="{{ route('category.edit',$row->id) }}" class="btn btn-info"><i class="fa fa-edit"></i></a>
-                                <a href="{{ url('categories/delete/'.$row->id) }}" class="btn btn-danger" onclick="confirmation(event)" ><i class="fa fa-trash"></i></a>
+                                <a href="{{ url('districts/delete/'.$row->id) }}" class="btn btn-danger" onclick="confirmation(event)" ><i class="fa fa-trash"></i></a>
                             </td>
 
                         </tr>

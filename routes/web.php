@@ -58,7 +58,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::controller(DistrictController::class)->group(function(){
         Route::get('/districts', 'Index')->name('districts');
         Route::post('/district/store','Store')->name('district.store');
-
+        Route::get('/districts/delete/{id}','Destroy');
+        Route::get('/districts/edit/{id}','Edit')->name('district.edit');
 
     });
 
