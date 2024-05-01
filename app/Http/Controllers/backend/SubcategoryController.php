@@ -31,7 +31,7 @@ class SubcategoryController extends Controller
         DB::table('subcategories')->insert([
             'subcategory_bn' => $request->subcategory_bn,
             'subcategory_en' => $request->subcategory_en,
-            'category_id' => $request->category_id
+            'category_id' => $request->category_id,
         ]);
 
        toastr()->success('Data has been saved successfully!', 'Congrats', ['timeOut' => 5000]);
@@ -49,7 +49,30 @@ class SubcategoryController extends Controller
     public function Edit($id)
     {
          $sub = Subcategory::find($id);
-         return view('backend.subcategory.edit',compact('sub'));
+         $category = DB::table('categories')->get();
+         return view('backend.subcategory.edit',compact('sub', 'category'));
+    }
+
+    public function Update(Request $request,$id)
+    {
+        $validated = $request->validate([
+            'subcategory_bn' => 'required|max:55',
+            'subcategory_en' => 'required|max:55',
+            'category_id' => 'required',
+        ]);
+
+        $data = array();
+        $data['subcategory_bn']=$request->subcategory_bn;
+        $data['subcategory_en']=$request->subcategory_en;
+        $data['category_id'] = $request->category_id;
+
+        DB::table('subcategories')->where('id',$id)->update($data);
+
+       toastr()->success('Data has been updated successfully!', 'Congrats', ['timeOut' => 5000]);
+       return redirect()->route('subcategories');
+
+
+
     }
 
 
