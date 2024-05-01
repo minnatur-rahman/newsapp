@@ -78,10 +78,10 @@
                         @csrf
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">SubCategory Name Bangla</label>
-                            <input type="text" name="category_bn"
-                                class="form-control @error('category_bn') is-invalid @enderror" id="exampleInputEmail1"
+                            <input type="text" name="subcategory_bn"
+                                class="form-control @error('subcategory_bn') is-invalid @enderror" id="exampleInputEmail1"
                                 aria-describedby="emailHelp">
-                            @error('category_bn')
+                            @error('subcategory_bn')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -89,9 +89,9 @@
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">SubCategory Name English</label>
-                            <input type="text" name="category_en"
-                                class="form-control @error('category_en') is-invalid @enderror" id="exampleInputPassword1">
-                            @error('category_en')
+                            <input type="text" name="subcategory_en"
+                                class="form-control @error('subcategory_en') is-invalid @enderror" id="exampleInputPassword1">
+                            @error('subcategory_en')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -100,14 +100,18 @@
 
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Choose Category</label>
-                            <select class="form-control" name="category_id" required>
+                            <select class="form-control  @error('subcategory_en') is-invalid @enderror" name="category_id" required>
                                 <option disabled selected>==Choose One==</option>
                                 @foreach ( $category as $row )
-                                    <option value="{{ $row->id }}">{{ $row->category_bn }}</option>
+                                    <option value="{{ $row->id }}">{{ $row->category_bn }} | {{ $row->category_en }}</option>
                                 @endforeach
 
                             </select>
-
+                            @error('category_id')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                         </div>
 
 
