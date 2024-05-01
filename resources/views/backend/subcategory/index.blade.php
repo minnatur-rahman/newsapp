@@ -51,8 +51,9 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th>Category Name Bangla</th>
-                        <th>Category Name English</th>
+                        <th>SubCategory Name Bangla</th>
+                        <th>SubCategory Name English</th>
+                        <th>Category</th>
                         <th>Action</th>
                     </tr>
                 </tfoot>
@@ -67,13 +68,13 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Insert New Category</h4>
+                    <h4 class="modal-title">Insert New SubCategory</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="{{ route('category.store') }}" method="POST">
+                    <form action="{{ route('subcategory.store') }}" method="POST">
                         @csrf
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">SubCategory Name Bangla</label>
@@ -100,9 +101,9 @@
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Choose Category</label>
                             <select class="form-control" name="category_id" required>
-                                <option disabled selected>==choose one==</option>
+                                <option disabled selected>==Choose One==</option>
                                 @foreach ( $category as $row )
-                                    <option></option>
+                                    <option value="{{ $row->id }}">{{ $row->category_bn }}</option>
                                 @endforeach
 
                             </select>
