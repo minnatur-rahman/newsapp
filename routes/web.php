@@ -52,8 +52,6 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::post('/subcategories/update/{id}','Update')->name('subcategory.update');
 
 
-
-
     });
 
 
