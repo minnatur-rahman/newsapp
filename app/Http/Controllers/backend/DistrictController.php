@@ -31,8 +31,35 @@ class DistrictController extends Controller
         return redirect()->back();
     }
 
+    public function Destroy($id)
+    {
+        District::destroy($id);
+        toastr()->success('Data has been deleted successfully!', 'Congrats', ['timeOut' => 5000]);
+        return redirect()->back();
+    }
 
+    public function EditDistrict($id)
+    {
+        // $district = DB::table('districts')->where('id',$id)->first();
+        $district = District::find($id);
+        return view('backend.district.edit_district',compact('district'));
+    }
 
+    public function Update(Request $request,$id)
+    {
+        $validated = $request->validate([
+            'district_bn' => 'required|max:55',
+            'district_en' => 'required|max:55',
+        ]);
+
+        DB::table('districts')->where('id',$id)->update([
+            'district_bn' => $request->district_bn,
+            'district_en' => $request->district_en,
+        ]);
+
+        toastr()->success('Data has been saved successfully!', 'Congrats', ['timeOut' => 5000]);
+        return redirect()->route('districts');
+    }
 
 
 }

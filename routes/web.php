@@ -59,8 +59,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::get('/districts', 'Index')->name('districts');
         Route::post('/district/store','Store')->name('district.store');
         Route::get('/districts/delete/{id}','Destroy');
-        Route::get('/districts/edit/{id}','Edit')->name('district.edit');
-
+        Route::get('/districts/edit/{id}','EditDistrict')->name('district.edit');
+        Route::post('/districts/update/{id}','Update')->name('district.update');
     });
 
     //___Subdistrict Route___//
