@@ -49,6 +49,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::post('/subcategories/store','Store')->name('subcategory.store');
         Route::get('/subcategories/delete/{id}','Destroy')->name('category.delete');
         Route::get('/subcategories/edit/{id}','Edit')->name('subcategory.edit');
+        Route::post('/subcategories/update/{id}','Update')->name('subcategory.update');
 
 
 
