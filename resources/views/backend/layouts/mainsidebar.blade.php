@@ -82,13 +82,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('categories') }}" class="nav-link">
+                <a href="{{ route('districts') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>District</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('subcategories') }}" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Subdistrict</p>
                 </a>

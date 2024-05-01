@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\DistrictController;
 use App\Http\Controllers\Backend\SubcategoryController;
+use App\Http\Controllers\Backend\SubdistrictController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -50,13 +52,22 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::get('/subcategories/delete/{id}','Destroy')->name('category.delete');
         Route::get('/subcategories/edit/{id}','Edit')->name('subcategory.edit');
         Route::post('/subcategories/update/{id}','Update')->name('subcategory.update');
+    });
+
+    //___District Route___//
+    Route::controller(DistrictController::class)->group(function(){
+        Route::get('/districts', 'Index')->name('districts');
+        Route::post('/district/store','Store')->name('district.store');
 
 
     });
 
+    //___Subdistrict Route___//
+    Route::controller(SubdistrictController::class)->group(function(){
 
 
 
+    });
 
 
 
