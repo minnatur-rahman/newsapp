@@ -4,12 +4,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Subcategories</h1>
+                    <h1 class="m-0 text-dark">Sub Districts</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">SubCategories</li>
+                        <li class="breadcrumb-item active">Sub Districts</li>
                     </ol>
                 </div>
             </div>
@@ -20,7 +20,7 @@
 
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Sub Categories Table</h3>
+            <h3 class="card-title">Sub Districts Table</h3>
             <button class="btn btn-danger btn-sm" style="float:right" data-toggle="modal" data-target="#modal-default">Add
                 New</button>
         </div>
@@ -29,16 +29,16 @@
             <table id="example1" class="table table-bordered table-striped">
                 <thead>
                     <tr>
-                        <th>SubCategory Name Bangla</th>
-                        <th>SubCategory Name English</th>
-                        <th>Category</th>
+                        <th>Districts Name Bangla</th>
+                        <th>Districts Name English</th>
+                        <th>District</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($sub as $row)
                         <tr>
-                            <td>{{ $row->subcategory_bn }}</td>
+                            <td>{{ $row->subdistrict_bn }}</td>
                             <td>{{ $row->subcategory_en }}</td>
                             <td>{{ $row->category_bn }}</td>
                             <td>
@@ -51,9 +51,9 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th>SubCategory Name Bangla</th>
-                        <th>SubCategory Name English</th>
-                        <th>Category</th>
+                        <th>Districts Name Bangla</th>
+                        <th>Districts Name English</th>
+                        <th>District</th>
                         <th>Action</th>
                     </tr>
                 </tfoot>
