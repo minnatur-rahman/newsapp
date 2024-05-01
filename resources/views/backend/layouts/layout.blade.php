@@ -31,7 +31,7 @@
 
     <link rel="stylesheet" href="{{ asset('backend') }}/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
 </head>
@@ -121,37 +121,6 @@
     <script src="{{ asset('backend') }}/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
 
 
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script type="text/javascript">
-        $(function() {
-            $(document).on('click', '#delete', function(e) {
-                e.preventDefault();
-                var link = $(this).attr("href");
-
-                Swal.fire({
-                    title: "Are you sure?",
-                    text: "You won't be able to revert this!",
-                    icon: "warning",
-                    showCancelButton: true,
-                    confirmButtonColor: "#3085d6",
-                    cancelButtonColor: "#d33",
-                    confirmButtonText: "Yes, delete it!"
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        Swal.fire({
-                            title: "Deleted!",
-                            text: "Your file has been deleted.",
-                            icon: "success"
-                        });
-                    }
-                });
-            })
-        });
-    </script>
-
-
-
     <script>
         $(function() {
             $("#example1").DataTable({
@@ -173,6 +142,25 @@
     </script>
 
 
+
+    <script type="text/javascript">
+            function confirmation(event){
+                event.preventDefault();
+                var urlToRedirect=event.currentTarget.getAttribute('href');
+                console.log(urlToRedirect);
+                swal({
+                    title: "Are you sure to delete this ?",
+                    text: "You won't be able to revert this delete",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                }).then((willCancel)=>{
+                    if(willCancel){
+                        window.location.href = urlToRedirect;
+                    }
+                });
+            }
+    </script>
 
 
 </body>

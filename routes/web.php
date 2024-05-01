@@ -38,15 +38,18 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::controller(CategoryController::class)->group(function(){
         Route::get('/categories','Index')->name('categories');
         Route::post('/categories/store','Store')->name('category.store');
-        Route::get('categories/delete/{id}','Destroy')->name('category.delete');
-        Route::get('categories/edit/{id}','Edit')->name('category.edit');
-        Route::post('categories/update/{id}','Update')->name('category.update');
+        Route::get('/categories/delete/{id}','Destroy')->name('category.delete');
+        Route::get('/categories/edit/{id}','Edit')->name('category.edit');
+        Route::post('/categories/update/{id}','Update')->name('category.update');
     });
 
     // subcategory route
     Route::controller(SubcategoryController::class)->group(function(){
         Route::get('/subcategory', 'Index')->name('subcategories');
         Route::post('/subcategories/store','Store')->name('subcategory.store');
+        Route::get('/subcategories/delete/{id}','Destroy')->name('category.delete');
+        Route::get('/subcategories/edit/{id}','Edit')->name('subcategory.edit');
+
 
 
 
