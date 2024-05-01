@@ -40,7 +40,7 @@
                         <tr>
                             <td>{{ $row->subcategory_bn }}</td>
                             <td>{{ $row->subcategory_en }}</td>
-                            <td>{{ $row->category_id }}</td>
+                            <td>{{ $row->category_bn }}</td>
                             <td>
                                 <a href="{{ route('category.edit',$row->id) }}" class="btn btn-info"><i class="fa fa-edit"></i></a>
                                 <a href="{{ route('category.delete',$row->id) }}" class="btn btn-danger" ><i class="fa fa-trash"></i></a>
@@ -100,7 +100,7 @@
 
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Choose Category</label>
-                            <select class="form-control  @error('subcategory_en') is-invalid @enderror" name="category_id" required>
+                            <select class="form-control  @error('category_id') is-invalid @enderror" name="category_id" required>
                                 <option disabled selected>==Choose One==</option>
                                 @foreach ( $category as $row )
                                     <option value="{{ $row->id }}">{{ $row->category_bn }} | {{ $row->category_en }}</option>
