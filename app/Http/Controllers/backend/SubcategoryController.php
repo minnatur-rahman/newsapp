@@ -14,7 +14,6 @@ class SubcategoryController extends Controller
     {
        $sub = DB::table('subcategories')->join('categories','subcategories.category_id','categories.id')->select('categories.category_bn','subcategories.*')->get();
 
-
        $category = DB::table('categories')->get();
         return view('backend.subcategory.index', compact('sub', 'category'));
     }
