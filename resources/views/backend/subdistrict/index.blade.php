@@ -42,7 +42,7 @@
                             <td>{{ $row->subdistrict_en }}</td>
                             <td>{{ $row->district_bn }}</td>
                             <td>
-                                <a href="{{ route('subcategory.edit',$row->id) }}" class="btn btn-info"><i class="fa fa-edit"></i></a>
+                                <a href="{{ route('subdistrict.edit',$row->id) }}" class="btn btn-info"><i class="fa fa-edit"></i></a>
                                 <a href="{{ url('subdistricts/delete/'.$row->id) }}"  class="btn btn-danger" onclick="confirmation(event)"><i class="fa fa-trash"></i></a>
                             </td>
 
