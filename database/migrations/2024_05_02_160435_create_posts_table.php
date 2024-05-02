@@ -22,13 +22,15 @@ return new class extends Migration
             $table->string('title_en');
             $table->string('image');
             $table->text('details_bn');
-            $table->text('details_en');
+            $table->text('details_en')->nullable();
             $table->text('tags_bn');
-            $table->text('tags_en');
+            $table->text('tags_en')->nullable();
             $table->integer('headline')->nullable();
             $table->integer('first_section')->nullable();
             $table->integer('first_section_thumbnail')->nullable();
-            $table->integer('headline')->nullable();
+            $table->integer('bigthumbnail')->nullable();
+            $table->string('post_date')->nullable();
+            $table->string('post_month')->nullable();
             $table->timestamps();
         });
     }

@@ -43,4 +43,32 @@ class SubdistrictController extends Controller
         toastr()->success('Data has been deleted successfully!', 'Congrats', ['timeOut' => 5000]);
         return redirect()->back();
     }
+
+    public function Edit($id)
+    {
+        $sub = Subdistrict::find($id);
+        $district = DB::table('districts')->get();
+        return view('backend.subdistrict.edit',compact('sub', 'district'));
+    }
+
+    public function Update(Request $request, $id)
+    {
+        $validated = $request->validate([
+            'subdistrict_bn' => 'required|max:100',
+            'subdistrict_en' => 'required|max:100',
+            'district_id' => 'required',
+        ]);
+
+        DB::table('subdistricts')->where('id', $id)->insert([
+            'subdistrict_bn' => $request->subdistrict_bn,
+            'subdistrict_en' => $request->subdistrict_en,
+            'district_id' => $request->district_id,
+        ]);
+
+       toastr()->success('Data has been update successfully!', 'Congrats', ['timeOut' => 5000]);
+       return redirect()->route('subdistricts');
+    }
+
+
+
 }
