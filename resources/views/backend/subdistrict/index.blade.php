@@ -39,8 +39,8 @@
                     @foreach ($sub as $row)
                         <tr>
                             <td>{{ $row->subdistrict_bn }}</td>
-                            <td>{{ $row->subcategory_en }}</td>
-                            <td>{{ $row->category_bn }}</td>
+                            <td>{{ $row->subdistrict_en }}</td>
+                            <td>{{ $row->district_bn }}</td>
                             <td>
                                 <a href="{{ route('subcategory.edit',$row->id) }}" class="btn btn-info"><i class="fa fa-edit"></i></a>
                                 <a href="{{ url('subcategories/delete/'.$row->id) }}"  class="btn btn-danger" onclick="confirmation(event)"  ><i class="fa fa-trash"></i></a>
@@ -68,30 +68,30 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Insert New SubCategory</h4>
+                    <h4 class="modal-title">Insert New Sub District</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="{{ route('subcategory.store') }}" method="POST">
+                    <form action="{{ route('subdistrict.store') }}" method="POST">
                         @csrf
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">SubCategory Name Bangla</label>
-                            <input type="text" name="subcategory_bn"
-                                class="form-control @error('subcategory_bn') is-invalid @enderror" id="exampleInputEmail1"
+                            <label for="exampleInputEmail1" class="form-label">Sub District Name Bangla</label>
+                            <input type="text" name="subdistrict_bn"
+                                class="form-control @error('subdistrict_bn') is-invalid @enderror" id="exampleInputEmail1"
                                 aria-describedby="emailHelp">
-                            @error('subcategory_bn')
+                            @error('subdistrict_bn')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">SubCategory Name English</label>
-                            <input type="text" name="subcategory_en"
-                                class="form-control @error('subcategory_en') is-invalid @enderror" id="exampleInputPassword1">
-                            @error('subcategory_en')
+                            <label for="exampleInputPassword1" class="form-label">Sub District Name English</label>
+                            <input type="text" name="subdistrict_en"
+                                class="form-control @error('subdistrict_en') is-invalid @enderror" id="exampleInputPassword1">
+                            @error('subdistrict_en')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -99,15 +99,15 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Choose Category</label>
-                            <select class="form-control  @error('category_id') is-invalid @enderror" name="category_id" required>
-                                <option disabled selected>==Choose One==</option>
-                                @foreach ( $category as $row )
-                                    <option value="{{ $row->id }}">{{ $row->category_bn }} | {{ $row->category_en }}</option>
+                            <label for="exampleInputPassword1" class="form-label">Choose District</label>
+                            <select class="form-control  @error('district_id') is-invalid @enderror" name="district_id" required>
+                             <option disabled selected>==Choose One==</option>
+                                @foreach ( $district as $row )
+                                    <option value="{{ $row->id }}">{{ $row->district_bn }} | {{ $row->district_en }}</option>
                                 @endforeach
 
                             </select>
-                            @error('category_id')
+                            @error('district_id')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
