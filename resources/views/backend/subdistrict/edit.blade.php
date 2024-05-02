@@ -32,7 +32,7 @@
                     </div>
                     <div class="modal-body">
 
-                        <form action="{{ route('subcategory.update',$sub->id) }}" method="POST">
+                        <form action="{{ route('subdistrict.update',$sub->id) }}" method="POST">
                             @csrf
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Subdistrict Name Bangla</label>
