@@ -26,6 +26,9 @@ return new class extends Migration
             $table->text('tags_bn');
             $table->text('tags_en');
             $table->integer('headline')->nullable();
+            $table->integer('first_section')->nullable();
+            $table->integer('first_section_thumbnail')->nullable();
+            $table->integer('headline')->nullable();
             $table->timestamps();
         });
     }
