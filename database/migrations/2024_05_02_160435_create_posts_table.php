@@ -17,6 +17,15 @@ return new class extends Migration
             $table->integer('subcat_id')->nullable();
             $table->integer('dist_id');
             $table->integer('subdist_id')->nullable();
+            $table->integer('user_id');
+            $table->string('title_bn');
+            $table->string('title_en');
+            $table->string('image');
+            $table->text('details_bn');
+            $table->text('details_en');
+            $table->text('tags_bn');
+            $table->text('tags_en');
+            $table->integer('headline')->nullable();
             $table->timestamps();
         });
     }
