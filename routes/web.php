@@ -67,6 +67,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::controller(SubdistrictController::class)->group(function(){
         Route::get('/subdistrict', 'Index')->name('subdistricts');
         Route::post('/subdistricts/store','SubdistrictStore')->name('subdistrict.store');
+        Route::get('/subdistricts/delete/{id}','Destroy');
 
 
     });
