@@ -59,7 +59,7 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="exampleInputPassword1">Subcategory</label>
-                                        <select name="subcat_id" class="form-control">
+                                        <select name="subcat_id" class="form-control" id="subcat_id">
                                             <option selected disabled">==Choose One==</option>
 
                                         </select>
@@ -172,18 +172,19 @@
 
     <script type="text/javascript">
         $(document).ready(function(){
-            $('select[name="country_id"]').on('change',function(){
-                var country_id = $(this).val();
-                if(country_id){
+            $('select[name="cat_id"]').on('change',function(){
+                var cat_id = $(this).val();
+                if(cat_id){
                     $.ajax({
-                        url:"{{ url('/get/cities/') }}/"+country_id,
+                        url:"{{ url('/get/subcat/') }}/"+cat_id,
                         type:"GET",
-                        dataType:"jaon",
+                        dataType:"json",
                         success:function(data){
-                            $("#city").empty();
+                            $("#subcat_id").empty();
                               $.each(data,function(key,value){
-                                $("#city").append('<option value="'+value.id+'">'+value.city_name+'</option>');
+                                $("#subcat_id").append('<option value="'+value.id+'">'+value.subcategory_bn+'</option>');
                               });
+
                         },
                     });
                 }else{

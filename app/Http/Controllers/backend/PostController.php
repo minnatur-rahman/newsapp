@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\District;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use PhpParser\Node\Stmt\Return_;
 
 class PostController extends Controller
@@ -26,5 +27,12 @@ class PostController extends Controller
     public function Store()
     {
 
+    }
+
+    //___json data return___//
+    public function GetSubCat($cat_id)
+    {
+       $sub = DB::table('subcategories')->where('category_id',$cat_id)->get();
+       return response()->json($sub);
     }
 }
