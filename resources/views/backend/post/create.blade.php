@@ -21,23 +21,25 @@
         <div class="container-fluid">
           <div class="row">
             <!-- left column -->
-            <div class="col-md-6">
+            <div class="col-md-12">
               <!-- general form elements -->
               <div class="card card-primary">
                 <div class="card-header">
-                  <h3 class="card-title">Quick Example</h3>
+                  <h3 class="card-title">Post Insert Panel</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
                 <form>
                   <div class="card-body">
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword1">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="exampleInputEmail1">Title Bangla</label>
+                            <input type="text" name="title_bn" class="form-control" id="exampleInputEmail1" placeholder="Type Here Bangla">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="exampleInputPassword1">Title English</label>
+                            <input type="text" name="title_en" class="form-control" id="exampleInputPassword1" placeholder="Type Here English">
+                          </div>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputFile">File input</label>
@@ -59,7 +61,7 @@
                   <!-- /.card-body -->
 
                   <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-warning">Submit</button>
                   </div>
                 </form>
               </div>
