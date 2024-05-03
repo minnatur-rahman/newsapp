@@ -169,9 +169,27 @@
         </div>
     </section>
 
+
     <script type="text/javascript">
         $(document).ready(function(){
-
-        })
+            $('select[name="country_id"]').on('change',function(){
+                var country_id = $(this).val();
+                if(country_id){
+                    $.ajax({
+                        url:"{{ url('/get/cities/') }}/"+country_id,
+                        type:"GET",
+                        dataType:"jaon",
+                        success:function(data){
+                            $("#city").empty();
+                              $.each(data,function(key,value){
+                                $("#city").append('<option value="'+value.id+'">'+value.city_name+'</option>');
+                              });
+                        },
+                    });
+                }else{
+                    alert('danger');
+                }
+            });
+        });
     </script>
 @endsection
