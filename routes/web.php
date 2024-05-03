@@ -3,6 +3,7 @@
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\DistrictController;
+use App\Http\Controllers\Backend\PostController;
 use App\Http\Controllers\Backend\SubcategoryController;
 use App\Http\Controllers\Backend\SubdistrictController;
 use App\Http\Controllers\HomeController;
@@ -36,7 +37,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     });
 
 
-    // category roue//
+    //___category roue___//
     Route::controller(CategoryController::class)->group(function(){
         Route::get('/categories','Index')->name('categories');
         Route::post('/categories/store','Store')->name('category.store');
@@ -45,7 +46,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::post('/categories/update/{id}','Update')->name('category.update');
     });
 
-    // subcategory route
+    //___subcategory route___//
     Route::controller(SubcategoryController::class)->group(function(){
         Route::get('/subcategory', 'Index')->name('subcategories');
         Route::post('/subcategories/store','Store')->name('subcategory.store');
@@ -74,6 +75,11 @@ Route::middleware(['auth', 'admin'])->group(function () {
     });
 
 
-
-
 });
+
+
+    //___Posts Routes___//
+    Route::controller(PostController::class)->group(function(){
+        Route::get('/create/post', 'Create')->name('create.post');
+
+    });
