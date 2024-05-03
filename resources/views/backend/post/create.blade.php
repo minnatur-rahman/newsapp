@@ -1,5 +1,6 @@
 @extends('backend.layouts.layout')
 @section('content')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
@@ -106,16 +107,56 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="exampleInputPassword1">Tags English</label>
-                                        <input type="text" name="tags_en" class="form-control"
-                                            id="exampleInputPassword1" placeholder="Type Here English">
+                                        <input type="text" name="tags_en" class="form-control" id="exampleInputPassword1"
+                                            placeholder="Type Here English">
                                     </div>
                                 </div>
 
-                                <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                <div class="form-group col-md-12">
+                                    <label for="exampleInputPassword1">Details Bangla</label>
+                                    <textarea class="summernote" name="details_bn">
+                                        Place <em>some</em> <u>text</u> <strong>here</strong>
+                                    </textarea>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <label for="exampleInputPassword1">Details English</label>
+                                    <textarea class="summernote" name="details_en">
+                                        Place <em>some</em> <u>text</u> <strong>here</strong>
+                                    </textarea>
+                                </div>
+
+                                <hr>
+                                <h4 class="text-center text-success">Extra Option</h4>
+                                <hr>
+
+                                <div class="row ">
+
+                                    <div class="form-check col-md-6">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="headline"value="1">
+                                        <label class="form-check-label" for="exampleCheck1">Headline</label>
+                                    </div>
+
+                                    <div class="form-check col-md-6">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="bigthumbnail"value="1">
+                                        <label class="form-check-label" for="exampleCheck1">General Big Thumbnail</label>
+                                    </div>
+
+                                    <div class="form-check col-md-6">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="first_section" value="1">
+                                        <label class="form-check-label" for="exampleCheck1">First Section</label>
+                                    </div>
+
+                                    <div class="form-check col-md-6">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1"
+                                         name="first_section_thumbnail" value="1">
+                                        <label class="form-check-label" for="exampleCheck1">First Section Big
+                                            Thumbnail</label>
+                                    </div>
+
                                 </div>
                             </div>
+                            <br>
                             <!-- /.card-body -->
 
                             <div class="card-footer">
@@ -127,4 +168,10 @@
             </div>
         </div>
     </section>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+        })
+    </script>
 @endsection
