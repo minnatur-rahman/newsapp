@@ -35,4 +35,10 @@ class PostController extends Controller
        $sub = DB::table('subcategories')->where('category_id',$cat_id)->get();
        return response()->json($sub);
     }
+
+    public function GetSubDist($dist_id)
+    {
+        $sub = DB::table('subdistricts')->where('district_id',$dist_id)->get();
+        return response()->json($sub);
+    }
 }

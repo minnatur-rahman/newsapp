@@ -48,8 +48,8 @@ class DistrictController extends Controller
     public function Update(Request $request,$id)
     {
         $validated = $request->validate([
-            'district_bn' => 'required|max:55',
-            'district_en' => 'required|max:55',
+            'district_bn' => 'required',
+            'district_en' => 'required',
         ]);
 
         DB::table('districts')->where('id',$id)->update([

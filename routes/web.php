@@ -84,5 +84,6 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::get('/create/post', 'Create')->name('create.post');
         //___Json Data__//
         Route::get('get/subcat/{cat_id}', 'GetSubCat');
+        Route::get('get/subdist/{dist_id}', 'GetSubDist');
 
     });

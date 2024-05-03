@@ -1,6 +1,6 @@
 @extends('backend.layouts.layout')
 @section('content')
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
@@ -69,7 +69,7 @@
                                 <div class="row">
                                     <div class="form-group col-md-6">
                                         <label for="exampleInputEmail1">District</label>
-                                        <select name="dist_id" class="form-control">
+                                        <select name="dist_id" class="form-control" id="dist_id">
                                             <option selected disabled">==Choose One==</option>
                                             @foreach ($district as $row)
                                                 <option value="{{ $row->id }}">
@@ -79,7 +79,7 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="exampleInputPassword1">Sub District</label>
-                                        <select name="subdist_id" class="form-control">
+                                        <select name="subdist_id" class="form-control" id="subdist_id">
                                             <option selected disabled">==Choose One==</option>
 
                                         </select>
@@ -133,23 +133,26 @@
                                 <div class="row ">
 
                                     <div class="form-check col-md-6">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="headline"value="1">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1"
+                                            name="headline"value="1">
                                         <label class="form-check-label" for="exampleCheck1">Headline</label>
                                     </div>
 
                                     <div class="form-check col-md-6">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="bigthumbnail"value="1">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1"
+                                            name="bigthumbnail"value="1">
                                         <label class="form-check-label" for="exampleCheck1">General Big Thumbnail</label>
                                     </div>
 
                                     <div class="form-check col-md-6">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="first_section" value="1">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1"
+                                            name="first_section" value="1">
                                         <label class="form-check-label" for="exampleCheck1">First Section</label>
                                     </div>
 
                                     <div class="form-check col-md-6">
                                         <input type="checkbox" class="form-check-input" id="exampleCheck1"
-                                         name="first_section_thumbnail" value="1">
+                                            name="first_section_thumbnail" value="1">
                                         <label class="form-check-label" for="exampleCheck1">First Section Big
                                             Thumbnail</label>
                                     </div>
@@ -171,26 +174,54 @@
 
 
     <script type="text/javascript">
-        $(document).ready(function(){
-            $('select[name="cat_id"]').on('change',function(){
+        $(document).ready(function() {
+            $('select[name="cat_id"]').on('change', function() {
                 var cat_id = $(this).val();
-                if(cat_id){
+                if (cat_id) {
                     $.ajax({
-                        url:"{{ url('/get/subcat/') }}/"+cat_id,
-                        type:"GET",
-                        dataType:"json",
-                        success:function(data){
+                        url: "{{ url('/get/subcat/') }}/" + cat_id,
+                        type: "GET",
+                        dataType: "json",
+                        success: function(data) {
                             $("#subcat_id").empty();
-                              $.each(data,function(key,value){
-                                $("#subcat_id").append('<option value="'+value.id+'">'+value.subcategory_bn+'</option>');
-                              });
+                            $.each(data, function(key, value) {
+                                $("#subcat_id").append('<option value="' + value.id +
+                                    '">' + value.subcategory_bn + '</option>');
+                            });
 
                         },
                     });
-                }else{
+                } else {
                     alert('danger');
                 }
             });
         });
     </script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('select[name="dist_id"]').on('change', function() {
+            var dist_id = $(this).val();
+            if (dist_id) {
+                $.ajax({
+                    url: "{{ url('/get/subdist/') }}/" + dist_id,
+                    type: "GET",
+                    dataType: "json",
+                    success: function(data) {
+                        $("#subdist_id").empty();
+                        $.each(data, function(key, value) {
+                            $("#subdist_id").append('<option value="' + value.id +
+                                '">' + value.subdistrict_bn + '</option>');
+                        });
+
+                    },
+                });
+            } else {
+                alert('danger');
+            }
+        });
+    });
+</script>
+
+
 @endsection
