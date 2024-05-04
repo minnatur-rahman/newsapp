@@ -116,14 +116,14 @@
                                 <div class="form-group col-md-12">
                                     <label for="exampleInputPassword1">Details Bangla</label>
                                     <textarea class="summernote" name="details_bn">
-                                        Place <em>some</em> <u>text</u> <strong>here</strong>
+                                        {{-- Place <em>some</em> <u>text</u> <strong>here</strong> --}}
                                     </textarea>
                                 </div>
 
                                 <div class="form-group col-md-12">
                                     <label for="exampleInputPassword1">Details English</label>
                                     <textarea class="summernote" name="details_en">
-                                        Place <em>some</em> <u>text</u> <strong>here</strong>
+                                        {{-- Place <em>some</em> <u>text</u> <strong>here</strong> --}}
                                     </textarea>
                                 </div>
 
