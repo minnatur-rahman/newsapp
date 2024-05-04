@@ -58,7 +58,7 @@ class PostController extends Controller
 
         $data['image'] = "hgd";
 
-        return response()
+        return response()->json($data);
 
     //     toastr()->success('Data has been saved successfully!', 'Congrats', ['timeOut' => 5000]);
     //    return redirect()->back();
