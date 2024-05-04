@@ -65,12 +65,6 @@ class SubdistrictController extends Controller
         $data['district_id']=$request->district_id;
         DB::table('subdistricts')->where('id',$id)->update($data);
 
-        // DB::table('subdistricts')->where('id', $id)->insert([
-        //     'subdistrict_bn' => $request->subdistrict_bn,
-        //     'subdistrict_en' => $request->subdistrict_en,
-        //     'district_id' => $request->district_id,
-        // ]);
-
        toastr()->success('Data has been update successfully!', 'Congrats', ['timeOut' => 5000]);
        return redirect()->route('subdistricts');
     }
