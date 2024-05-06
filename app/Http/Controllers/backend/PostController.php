@@ -6,8 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\District;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use PhpParser\Node\Stmt\Return_;
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 class PostController extends Controller
 {
@@ -42,7 +45,7 @@ class PostController extends Controller
         $data['subcat_id']=$request->subcat_id;
         $data['dist_id'] = $request->dist_id;
         $data['subdist_id'] = $request->subdist_id;
-        $data['user_id']=$request->user_id;
+        $data['user_id']= Auth::id();
         $data['title_bn']=$request->title_bn;
         $data['title_en'] = $request->title_en;
         $data['details_bn'] = $request->details_bn;
@@ -53,15 +56,29 @@ class PostController extends Controller
         $data['first_section'] = $request->first_section;
         $data['first_section_thumbnail'] = $request->first_section_thumbnail;
         $data['bigthumbnail'] = $request->bigthumbnail;
-        $data['post_date'] = $request->post_date;
-        $data['post_month'] = $request->post_month;
+        $data['post_date'] = date('d-m-Y');
+        $data['post_month'] = date("F");
 
-        $data['image'] = "hgd";
 
-        return response()->json($data);
+        if($image = $request->image){
+            $manager = new ImageManager(new Driver());
+            $image_one = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            $img = $manager->read($image = $request->image);
+            $img = $img->resize(500,310);
 
-    //     toastr()->success('Data has been saved successfully!', 'Congrats', ['timeOut' => 5000]);
-    //    return redirect()->back();
+            $img->toJpeg(80)->save(base_path('public/uploadimg/'.$image_one));
+            $data['image'] = 'public/uploadimg/'.$image_one;
+
+            DB::table('posts')->insert($data);
+
+        }
+
+            toastr()->success('Data has been saved successfully!', 'Congrats', ['timeOut' => 5000]);
+            return redirect()->back();
+
+
+
+
     }
 
     //___json data return___//
