@@ -16,7 +16,19 @@ class PostController extends Controller
 {
     public function Index()
     {
+        // $post = DB::table('posts')->join('categories','posts.cat_id','categories.id')
+        //                           ->join('subcategories','posts.subcat_id','subcategories.id')
+        //                           ->join('districts','posts.dist_id','districts.id')
+        //                           ->join('subdistricts','posts.subdist_id','subdistricts.id')
+        //                           ->get();
 
+
+        $post = DB::table('posts')->join('categories','posts.cat_id','categories.id')
+                                  ->join('subcategories','posts.subcat_id','subcategories.id')
+                                  ->select('posts.*','categories.category_bn','subcategories.subcategory_bn')
+                                  ->get();
+
+                return view('backend.post.index',compact('post'));
     }
 
     public function Create()
@@ -60,14 +72,14 @@ class PostController extends Controller
         $data['post_month'] = date("F");
 
 
-        if($image = $request->image){
+        if($request->file('image')){
             $manager = new ImageManager(new Driver());
-            $image_one = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-            $img = $manager->read($image = $request->image);
+            $image_one = hexdec(uniqid()).'.'.$request->file('image')->getClientOriginalExtension();
+            $img = $manager->read($request->file('image'));
             $img = $img->resize(500,310);
 
             $img->toJpeg(80)->save(base_path('public/uploadimg/'.$image_one));
-            $data['image'] = 'public/uploadimg/'.$image_one;
+            $data['image'] = 'uploadimg/'.$image_one;
 
             DB::table('posts')->insert($data);
 
