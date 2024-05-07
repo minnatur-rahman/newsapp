@@ -46,7 +46,7 @@
                             <td><img src="{{ URL::to($row->image) }}" style="height: 80px; width: 80px;"></td>
                             <td>{{ $row->post_date }}</td>
                             <td>
-                                <a href="{{ route('subcategory.edit',$row->id) }}" class="btn btn-info"><i class="fa fa-edit"></i></a>
+                                <a href="{{ route('post.edit',$row->id) }}" class="btn btn-info"><i class="fa fa-edit"></i></a>
                                 <a href="{{ url('post/delete/'.$row->id) }}"  class="btn btn-danger" onclick="confirmation(event)"  ><i class="fa fa-trash"></i></a>
                             </td>
 

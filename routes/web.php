@@ -84,8 +84,9 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::get('/create/post', 'Create')->name('create.post');
         Route::post('/post/store', 'Store')->name('post.store');
         //___Json Data__//
-        Route::get('get/subcat/{cat_id}', 'GetSubCat');
-        Route::get('get/subdist/{dist_id}', 'GetSubDist');
-        Route::get('all/post', 'Index')->name('all.post');
-        Route::get('post/delete/{id}', 'Destroy');
+        Route::get('/get/subcat/{cat_id}', 'GetSubCat');
+        Route::get('/get/subdist/{dist_id}', 'GetSubDist');
+        Route::get('/all/post', 'Index')->name('all.post');
+        Route::get('/post/delete/{id}', 'Destroy');
+        Route::get('/post/edit/{id}','Edit')->name('post.edit');
     });
