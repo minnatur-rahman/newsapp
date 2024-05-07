@@ -108,12 +108,12 @@
                                 <div class="row">
                                     <div class="form-group col-md-6">
                                         <label for="exampleInputEmail1">Tags Bangla</label>
-                                        <input type="text" name="tags_bn" class="form-control" id="exampleInputEmail1"
+                                        <input type="text" name="tags_bn" value="{{ $post->tags_bn }}" class="form-control" id="exampleInputEmail1"
                                             placeholder="Type Here Bangla">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="exampleInputPassword1">Tags English</label>
-                                        <input type="text" name="tags_en" class="form-control" id="exampleInputPassword1"
+                                        <input type="text" name="tags_en" value="{{ $post->tags_en }}" class="form-control" id="exampleInputPassword1"
                                             placeholder="Type Here English">
                                     </div>
                                 </div>
@@ -121,12 +121,14 @@
                                 <div class="form-group col-md-12">
                                     <label for="exampleInputPassword1">Details Bangla</label>
                                     <textarea class="summernote" name="details_bn">
+                                        {{ $post->details_bn }}
                                     </textarea>
                                 </div>
 
                                 <div class="form-group col-md-12">
                                     <label for="exampleInputPassword1">Details English</label>
                                     <textarea class="summernote" name="details_en">
+                                        {{ $post->details_en }}
                                     </textarea>
                                 </div>
 
@@ -138,25 +140,34 @@
 
                                     <div class="form-check col-md-6">
                                         <input type="checkbox" class="form-check-input" id="exampleCheck1"
-                                            name="headline"value="1">
+                                            name="headline"value="1"
+                                            <?php if ($post->headline==1) {
+                                                echo "checked";
+                                            } ?>>
                                         <label class="form-check-label" for="exampleCheck1">Headline</label>
                                     </div>
 
                                     <div class="form-check col-md-6">
                                         <input type="checkbox" class="form-check-input" id="exampleCheck1"
-                                            name="bigthumbnail"value="1">
+                                            name="bigthumbnail"value="1" <?php if ($post->bigthumbnail==1) {
+                                                echo "checked";
+                                            } ?>>
                                         <label class="form-check-label" for="exampleCheck1">General Big Thumbnail</label>
                                     </div>
 
                                     <div class="form-check col-md-6">
                                         <input type="checkbox" class="form-check-input" id="exampleCheck1"
-                                            name="first_section" value="1">
+                                            name="first_section" value="1" <?php if ($post->first_section==1) {
+                                                echo "checked";
+                                            } ?>>
                                         <label class="form-check-label" for="exampleCheck1">First Section</label>
                                     </div>
 
                                     <div class="form-check col-md-6">
                                         <input type="checkbox" class="form-check-input" id="exampleCheck1"
-                                            name="first_section_thumbnail" value="1">
+                                            name="first_section_thumbnail" value="1" <?php if ($post->first_section_thumbnail==1) {
+                                                echo "checked";
+                                            } ?>>
                                         <label class="form-check-label" for="exampleCheck1">First Section Big
                                             Thumbnail</label>
                                     </div>
