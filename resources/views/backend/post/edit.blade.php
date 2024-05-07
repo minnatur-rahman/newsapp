@@ -1,6 +1,11 @@
 @extends('backend.layouts.layout')
 @section('content')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    @php
+        $sub = DB::table('subcategories')->where('category_id',$post->cat_id)->get();
+        $subdist = DB::table('subdistricts')->where('district_id',$post->dist_id)->get();
+    @endphp
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
@@ -53,7 +58,9 @@
                                         <select name="cat_id" class="form-control">
                                             <option selected disabled">==Choose One==</option>
                                             @foreach ($category as $row)
-                                                <option value="{{ $row->id }}">
+                                                <option value="{{ $row->id }}" <?php if ($row->id==$post->cat_id) {
+                                                    echo "selected";
+                                                } ?>>
                                                     {{ $row->category_bn }}|{{ $row->category_en }}</option>
                                             @endforeach
                                         </select>
@@ -62,7 +69,12 @@
                                         <label for="exampleInputPassword1">Subcategory</label>
                                         <select name="subcat_id" class="form-control" id="subcat_id">
                                             <option selected disabled">==Choose One==</option>
-
+                                            @foreach ($sub as $row)
+                                            <option value="{{ $row->id }}" <?php if ($row->id==$post->subcat_id) {
+                                                echo "selected";
+                                            } ?>>
+                                                {{ $row->subcategory_bn }}|{{ $row->subcategory_en }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -73,7 +85,9 @@
                                         <select name="dist_id" class="form-control" id="dist_id">
                                             <option selected disabled">==Choose One==</option>
                                             @foreach ($district as $row)
-                                                <option value="{{ $row->id }}">
+                                                <option value="{{ $row->id }}" <?php if ($row->id==$post->dist_id) {
+                                                    echo "selected";
+                                                } ?>>
                                                     {{ $row->district_bn }}|{{ $row->district_en }}</option>
                                             @endforeach
                                         </select>
@@ -82,7 +96,12 @@
                                         <label for="exampleInputPassword1">Sub District</label>
                                         <select name="subdist_id" class="form-control" id="subdist_id">
                                             <option selected disabled">==Choose One==</option>
-
+                                            @foreach ($subdist as $row)
+                                            <option value="{{ $row->id }}" <?php if ($row->id==$post->subdist_id) {
+                                                echo "selected";
+                                            } ?>>
+                                                {{ $row->subdistrict_bn }}|{{ $row->subdistrict_en }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
