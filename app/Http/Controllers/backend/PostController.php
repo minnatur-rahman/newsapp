@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\District;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -104,5 +105,26 @@ class PostController extends Controller
     {
         $sub = DB::table('subdistricts')->where('district_id',$dist_id)->get();
         return response()->json($sub);
+    }
+
+    public function Destroy($id)
+    {
+      $post=DB::table('posts')->where('id',$id)->first();
+      if (file_exists($post->image)) {
+        unlink($post->image);
+    }
+      DB::table('posts')->where('id',$id)->delete();
+
+        toastr()->success('Data has been deleted successfully!', 'Congrats', ['timeOut' => 5000]);
+        return redirect()->back();
+    }
+
+    public function Edit($id)
+    {
+        $post=DB::table('posts')->where('id',$id)->first();
+        $category = Category::all();
+        $district = District::all();
+
+        return view('backend.post.edit',compact('post','category','district'));
     }
 }

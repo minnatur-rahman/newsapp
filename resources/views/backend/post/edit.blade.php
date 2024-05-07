@@ -37,12 +37,12 @@
                                 <div class="row">
                                     <div class="form-group col-md-6">
                                         <label for="exampleInputEmail1">Title Bangla</label>
-                                        <input type="text" name="title_bn" class="form-control" id="exampleInputEmail1"
+                                        <input type="text" name="title_bn" value="{{ $post->title_bn }}" class="form-control" id="exampleInputEmail1"
                                             placeholder="Type Here Bangla">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="exampleInputPassword1">Title English</label>
-                                        <input type="text" name="title_en" class="form-control"
+                                        <input type="text" name="title_en" value="{{ $post->title_en }}" class="form-control"
                                             id="exampleInputPassword1" placeholder="Type Here English">
                                     </div>
                                 </div>
@@ -87,16 +87,21 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="exampleInputFile">File input</label>
-                                    <div class="input-group">
-                                        <div class="custom-file">
-                                            <input type="file" name="image" class="custom-file-input" id="exampleInputFile" required>
-                                            <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                <div class="row">
+                                    <div class="form-group col-lg-6">
+                                        <label for="exampleInputFile">File input</label>
+                                        <div class="input-group">
+                                            <div class="custom-file">
+                                                <input type="file" name="image" class="custom-file-input" id="exampleInputFile" required>
+                                                <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                            </div>
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">Upload</span>
+                                            </div>
                                         </div>
-                                        <div class="input-group-append">
-                                            <span class="input-group-text">Upload</span>
-                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label for="exampleInputFile">Old Image</label>
                                     </div>
                                 </div>
 
