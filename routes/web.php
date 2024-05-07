@@ -87,5 +87,5 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::get('get/subcat/{cat_id}', 'GetSubCat');
         Route::get('get/subdist/{dist_id}', 'GetSubDist');
         Route::get('all/post', 'Index')->name('all.post');
-
+        Route::get('post/delete/{id}', 'Destroy');
     });

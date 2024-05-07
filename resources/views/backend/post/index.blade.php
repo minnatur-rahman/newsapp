@@ -47,7 +47,7 @@
                             <td>{{ $row->post_date }}</td>
                             <td>
                                 <a href="{{ route('subcategory.edit',$row->id) }}" class="btn btn-info"><i class="fa fa-edit"></i></a>
-                                <a href="{{ url('subcategories/delete/'.$row->id) }}"  class="btn btn-danger" onclick="confirmation(event)"  ><i class="fa fa-trash"></i></a>
+                                <a href="{{ url('post/delete/'.$row->id) }}"  class="btn btn-danger" onclick="confirmation(event)"  ><i class="fa fa-trash"></i></a>
                             </td>
 
                         </tr>
