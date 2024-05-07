@@ -101,7 +101,8 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
-                                        <label for="exampleInputFile">Old Image</label>
+                                        <label for="exampleInputFile">Old Image</label><br>
+                                        <img src="{{ URL::to($post->image) }}" style="height: 50px; width: 70px;" alt="">
                                     </div>
                                 </div>
 
