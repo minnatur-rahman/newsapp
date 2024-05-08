@@ -103,7 +103,6 @@
               <p>
                 Posts
                 <i class="fas fa-angle-left right"></i>
-
               </p>
             </a>
             <ul class="nav nav-treeview">
@@ -117,6 +116,31 @@
                 <a href="{{ route('all.post') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>All post</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Setting
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('social.setting') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Social Setting</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('all.post') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>SEO Setting</p>
                 </a>
               </li>
             </ul>
