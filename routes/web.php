@@ -97,6 +97,6 @@ Route::middleware(['auth', 'admin'])->group(function () {
     //___setting___//
     Route::controller(SettingController::class)->group(function(){
         Route::get('/social/setting','SocialSetting')->name('social.setting');
-
+        Route::post('/social/update','SocialUpdate')->name('social.update');
 
     });
