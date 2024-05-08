@@ -84,13 +84,12 @@ class PostController extends Controller
 
             DB::table('posts')->insert($data);
 
-        }
-
             toastr()->success('Data has been saved successfully!', 'Congrats', ['timeOut' => 5000]);
             return redirect()->back();
 
-
-
+        }else{
+            return redirect()->back();
+        }
 
     }
 
@@ -126,5 +125,60 @@ class PostController extends Controller
         $district = District::all();
 
         return view('backend.post.edit',compact('post','category','district'));
+    }
+
+    public function Update(Request $request,$id)
+    {
+        $validated = $request->validate([
+            'title_bn' => 'required|max:100',
+            'title_en' => 'required|max:100',
+            'cat_id' => 'required',
+            'dist_id' => 'required',
+            'tags_bn' => 'required',
+            'tags_en' => 'required',
+            'details_bn' => 'required',
+            'details_en' => 'required',
+        ]);
+
+        $data = array();
+        $data['cat_id']=$request->cat_id;
+        $data['subcat_id']=$request->subcat_id;
+        $data['dist_id'] = $request->dist_id;
+        $data['subdist_id'] = $request->subdist_id;
+        $data['title_bn']=$request->title_bn;
+        $data['title_en'] = $request->title_en;
+        $data['details_bn'] = $request->details_bn;
+        $data['details_en']=$request->details_en;
+        $data['tags_bn'] = $request->tags_bn;
+        $data['tags_en']=$request->tags_en;
+        $data['headline'] = $request->headline;
+        $data['first_section'] = $request->first_section;
+        $data['first_section_thumbnail'] = $request->first_section_thumbnail;
+        $data['bigthumbnail'] = $request->bigthumbnail;
+
+        $oldImage = $request->oldImage;
+
+
+        if($request->file('image')){
+            $manager = new ImageManager(new Driver());
+            $image_one = hexdec(uniqid()).'.'.$request->file('image')->getClientOriginalExtension();
+            $img = $manager->read($request->file('image'));
+            $img = $img->resize(500,310);
+
+            $img->toJpeg(80)->save(base_path('public/uploadimg/'.$image_one));
+            $data['image'] = 'uploadimg/'.$image_one;
+
+            DB::table('posts')->where('id',$id)->update($data);
+            unlink($oldImage);
+
+            toastr()->success('Post update successfully!', 'Congrats', ['timeOut' => 5000]);
+            return redirect()->route('all.post');
+        }
+        //__jodi image na thaka noutn vaba__//
+        $data['image']=$oldImage;
+        DB::table('posts')->where('id',$id)->update($data);
+
+        toastr()->success('Post update successfully!', 'Congrats', ['timeOut' => 5000]);
+        return redirect()->route('all.post');
     }
 }
