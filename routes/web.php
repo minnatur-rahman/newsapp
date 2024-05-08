@@ -4,6 +4,7 @@ use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\DistrictController;
 use App\Http\Controllers\Backend\PostController;
+use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\SubcategoryController;
 use App\Http\Controllers\Backend\SubdistrictController;
 use App\Http\Controllers\HomeController;
@@ -90,4 +91,12 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::get('/post/delete/{id}', 'Destroy');
         Route::get('/post/edit/{id}','Edit')->name('post.edit');
         Route::post('/post/update/{id}','Update')->name('post.update');
+    });
+
+
+    //___setting___//
+    Route::controller(SettingController::class)->group(function(){
+        Route::get('/social/setting','SocialSetting')->name('social.setting');
+
+
     });
