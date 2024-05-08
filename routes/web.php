@@ -89,4 +89,5 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::get('/all/post', 'Index')->name('all.post');
         Route::get('/post/delete/{id}', 'Destroy');
         Route::get('/post/edit/{id}','Edit')->name('post.edit');
+        Route::get('/post/update/{id}','Update')->name('post.update');
     });
