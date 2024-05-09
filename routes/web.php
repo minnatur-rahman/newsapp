@@ -101,4 +101,5 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::post('/social/update/{id}','SocialUpdate')->name('social.update');
        //___SEO setting___//
        Route::get('/seo/setting','SeoSetting')->name('seo.setting');
+       Route::post('/seo/update','SeoUpdate')->name('seo.update');
     });

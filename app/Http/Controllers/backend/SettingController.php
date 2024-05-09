@@ -43,4 +43,9 @@ class SettingController extends Controller
        $seo = DB::table('seos')->first();
        return view('backend.setting.seo',compact('seo'));
     }
+
+    public function SeoUpdate()
+    {
+
+    }
 }
