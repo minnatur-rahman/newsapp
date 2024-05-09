@@ -62,19 +62,19 @@
                                 <label for="exampleInputEmail1" class="form-label">Google Analytics </label>
                                 <input type="text" name="google_analytics"
                                     class="form-control" value="{{ $seo->google_analytics }}"
-                                    aria-describedby="emailHelp" required>
+                                    aria-describedby="emailHelp" >
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Google Verification </label>
                                 <input type="text" name="google_verification"
                                     class="form-control" value="{{ $seo->google_verification }}"
-                                    aria-describedby="emailHelp" required>
+                                    aria-describedby="emailHelp">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Alexa Analytics</label>
                                 <input type="text" name="alexa_analytics"
                                     class="form-control" value="{{ $seo->alexa_analytics }}"
-                                    aria-describedby="emailHelp" required>
+                                    aria-describedby="emailHelp">
                             </div>
 
                             <button type="submit" class="btn btn-primary">Update</button>
