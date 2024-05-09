@@ -138,7 +138,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('all.post') }}" class="nav-link">
+                <a href="{{ route('seo.setting') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>SEO Setting</p>
                 </a>
