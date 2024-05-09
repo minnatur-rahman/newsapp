@@ -44,8 +44,29 @@ class SettingController extends Controller
        return view('backend.setting.seo',compact('seo'));
     }
 
-    public function SeoUpdate()
+    public function SeoUpdate(Request $request,$id)
     {
+        $validated = $request->validate([
+            'meta_author' => 'required|max:55',
+            'meta_title' => 'required|max:55',
+            'meta_keyword' => 'required|max:55',
+            'meta_description' => 'required|max:55',
 
+
+       ]);
+
+        DB::table('seos')->where('id',$id)->update([
+            'meta_author' => $request->meta_author,
+            'meta_title' => $request->meta_title,
+            'meta_keyword' => $request->meta_keyword,
+            'meta_description' => $request->meta_description,
+            'google_analytics' => $request->google_analytics,
+            'google_verification' => $request->google_verification,
+            'alexa_analytics' => $request->alexa_analytics,
+
+    ]);
+
+        toastr()->success('Data has been update successfully!', 'Congrats', ['timeOut' => 5000]);
+        return redirect()->back();
     }
 }
