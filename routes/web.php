@@ -94,9 +94,11 @@ Route::middleware(['auth', 'admin'])->group(function () {
     });
 
 
-    //___setting___//
+    //___setting__//
     Route::controller(SettingController::class)->group(function(){
+        //___socials setting___//
         Route::get('/social/setting','SocialSetting')->name('social.setting');
-        Route::post('/social/update','SocialUpdate')->name('social.update');
-
+        Route::post('/social/update/{id}','SocialUpdate')->name('social.update');
+       //___SEO setting___//
+       Route::get('/seo/setting','SeoSetting')->name('seo.setting');
     });
