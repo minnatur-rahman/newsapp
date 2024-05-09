@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('namazs', function (Blueprint $table) {
             $table->id();
+            $table->string('fojor')->nullable();
+            $table->string('johor')->nullable();
+            $table->string('asor')->nullable();
+            $table->string('magrib')->nullable();
+            $table->string('esha')->nullable();
+            $table->string('jummah')->nullable();
             $table->timestamps();
         });
     }

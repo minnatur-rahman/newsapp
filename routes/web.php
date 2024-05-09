@@ -102,4 +102,6 @@ Route::middleware(['auth', 'admin'])->group(function () {
        //___SEO setting___//
        Route::get('/seo/setting','SeoSetting')->name('seo.setting');
        Route::post('/seo/update/{id}','SeoUpdate')->name('seo.update');
+       //___Namaz setting___//
+       Route::get('/namaz/setting','NamazSetting')->name('namaz.setting');
     });
