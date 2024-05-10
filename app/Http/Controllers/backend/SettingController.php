@@ -69,4 +69,33 @@ class SettingController extends Controller
         toastr()->success('Data has been update successfully!', 'Congrats', ['timeOut' => 5000]);
         return redirect()->back();
     }
+
+    public function NamazSetting()
+    {
+        $namaz = DB::table('namazs')->first();
+        return view('backend.setting.namaz',compact('namaz'));
+    }
+
+    public function NamazUpdate(Request $request,$id)
+    {
+        DB::table('namazs')->where('id',$id)->update([
+            'fojor' => $request->fojor,
+            'johor' => $request->johor,
+            'asor' => $request->asor,
+            'magrib' => $request->magrib,
+            'esha' => $request->esha,
+            'jummah' => $request->jummah,
+
+
+    ]);
+       toastr()->success('Data has been update successfully!', 'Congrats', ['timeOut' => 5000]);
+       return redirect()->back();
+
+    }
+
+    public function LiveTVSetting()
+    {
+        $tv = DB::table('livetvs')->first();
+        return view('backend.setting.livetv',compact('tv'));
+    }
 }

@@ -28,7 +28,12 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title">Live TV Setting</h4>
-                        <a class="btn btn-success" style="float: right" href="">Active</a>
+                        @if ($tv->status==1)
+                            <a class="btn btn-danger" style="float: right" href="">Deactive</a>
+                        @else
+                            <a class="btn btn-success" style="float: right" href="">Active</a>
+                        @endif
+
                     </div>
                     <div class="modal-body">
 
@@ -39,7 +44,11 @@
                                 <textarea type="text" name="embed_code" class="form-control" aria-describedby="emailHelp" required>
                                     {{ $tv->embed_code }}
                                 </textarea>
-                                <small class="text-danger">Now Live Tv are deactive</small>
+                                @if ($tv->status==1)
+                                     <small class="text-success">Now Live TV are Active</small>
+                                @else
+                                     <small class="text-danger">Now Live TV are Deactive</small>
+                                @endif
                             </div>
                             <button type="submit" class="btn btn-success">Update</button>
                         </form>
