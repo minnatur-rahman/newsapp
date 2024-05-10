@@ -107,5 +107,5 @@ Route::middleware(['auth', 'admin'])->group(function () {
        Route::post('/namaz/update/{id}','NamazUpdate')->name('namaz.update');
        //___Live Tv setting___//
        Route::get('/livetv/setting','LiveTVSetting')->name('livetv.setting');
-       Route::post('/namaz/update/{id}','NamazUpdate')->name('namaz.update');
+       Route::post('/livetv/update/{id}','LiveTvUpdate')->name('livetv.update');
     });

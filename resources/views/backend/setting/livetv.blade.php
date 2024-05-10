@@ -33,11 +33,10 @@
                         @else
                             <a class="btn btn-success" style="float: right" href="">Active</a>
                         @endif
-
                     </div>
                     <div class="modal-body">
 
-                        <form action="{{ route('seo.update',$tv->id) }}" method="POST">
+                        <form action="{{ route('livetv.update',$tv->id) }}" method="POST">
                             @csrf
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Embed Code</label>
