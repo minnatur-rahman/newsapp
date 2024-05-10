@@ -32,7 +32,7 @@
                     </div>
                     <div class="modal-body">
 
-                        <form action="{{ route('social.update',$namaz->id) }}" method="POST">
+                        <form action="{{ route('namaz.update',$namaz->id) }}" method="POST">
                             @csrf
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Fojor</label>
@@ -48,32 +48,26 @@
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Asor</label>
-                                <input type="text" name="fojor"
-                                    class="form-control" value="{{ $namaz->fojor }}"
+                                <input type="text" name="asor"
+                                    class="form-control" value="{{ $namaz->asor }}"
                                     aria-describedby="emailHelp">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Magrib</label>
-                                <input type="text" name="fojor"
-                                    class="form-control" value="{{ $namaz->fojor }}"
-                                    aria-describedby="emailHelp">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Magrib</label>
-                                <input type="text" name="fojor"
-                                    class="form-control" value="{{ $namaz->fojor }}"
+                                <input type="text" name="magrib"
+                                    class="form-control" value="{{ $namaz->magrib }}"
                                     aria-describedby="emailHelp">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Easha</label>
-                                <input type="text" name="fojor"
-                                    class="form-control" value="{{ $namaz->fojor }}"
+                                <input type="text" name="esha"
+                                    class="form-control" value="{{ $namaz->esha }}"
                                     aria-describedby="emailHelp">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Jumah</label>
-                                <input type="text" name="fojor"
-                                    class="form-control" value="{{ $namaz->fojor }}"
+                                <input type="text" name="jummah"
+                                    class="form-control" value="{{ $namaz->jummah }}"
                                     aria-describedby="emailHelp">
                             </div>
 
