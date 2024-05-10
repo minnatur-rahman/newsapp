@@ -108,4 +108,6 @@ Route::middleware(['auth', 'admin'])->group(function () {
        //___Live Tv setting___//
        Route::get('/livetv/setting','LiveTVSetting')->name('livetv.setting');
        Route::post('/livetv/update/{id}','LiveTvUpdate')->name('livetv.update');
+       Route::get('/livetv/deactive/{id}','LiveTVDeActive')->name('livetv.deactive');
+       Route::get('/livetv/active/{id}','LiveTVActive')->name('livetv.active');
     });
