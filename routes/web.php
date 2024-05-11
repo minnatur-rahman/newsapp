@@ -117,5 +117,6 @@ Route::middleware(['auth', 'admin'])->group(function () {
        Route::get('/notice/active/{id}','NoticeActive')->name('notice.active');
        //___Important Website___//
        Route::get('/important/website','ImportantWebsite')->name('important.website');
-       Route::post('/notice/update/{id}','NoticeUpdate')->name('notice.update');
+       Route::post('/website/update/{id}','WebsiteUpdate')->name('website.update');
+
     });

@@ -71,14 +71,14 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="{{ route('category.store') }}" method="POST">
+                    <form action="{{ route('website.store') }}" method="POST">
                         @csrf
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Website Name</label>
                             <input type="text" name="website_name"
-                                class="form-control @error('category_bn') is-invalid @enderror" id="exampleInputEmail1"
+                                class="form-control @error('website_name') is-invalid @enderror" id="exampleInputEmail1"
                                 aria-describedby="emailHelp">
-                            @error('category_bn')
+                            @error('website_name')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -87,8 +87,8 @@
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Website Link</label>
                             <input type="text" name="website_link"
-                                class="form-control @error('category_en') is-invalid @enderror" id="exampleInputPassword1">
-                            @error('category_en')
+                                class="form-control @error('website_link') is-invalid @enderror" id="exampleInputPassword1">
+                            @error('website_link')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
