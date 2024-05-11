@@ -35,10 +35,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($category as $row)
+                    @foreach ($web as $row)
                         <tr>
-                            <td>{{ $row->category_bn }}</td>
-                            <td>{{ $row->category_en }}</td>
+                            <td>{{ $row->website_name }}</td>
+                            <td>{{ $row->website_link }}</td>
                             <td>
                                 <a href="{{ route('category.edit',$row->id) }}" class="btn btn-info"><i class="fa fa-edit"></i></a>
                                 <a href="{{ url('categories/delete/'.$row->id) }}" class="btn btn-danger" onclick="confirmation(event)" ><i class="fa fa-trash"></i></a>
@@ -65,7 +65,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Insert New Category</h4>
+                    <h4 class="modal-title">Insert New Website</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -74,7 +74,7 @@
                     <form action="{{ route('category.store') }}" method="POST">
                         @csrf
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Category Name Bangla</label>
+                            <label for="exampleInputEmail1" class="form-label">Website Name</label>
                             <input type="text" name="category_bn"
                                 class="form-control @error('category_bn') is-invalid @enderror" id="exampleInputEmail1"
                                 aria-describedby="emailHelp">
@@ -85,7 +85,7 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Category Name English</label>
+                            <label for="exampleInputPassword1" class="form-label">Website Link</label>
                             <input type="text" name="category_en"
                                 class="form-control @error('category_en') is-invalid @enderror" id="exampleInputPassword1">
                             @error('category_en')
