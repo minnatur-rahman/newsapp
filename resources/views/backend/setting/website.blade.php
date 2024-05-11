@@ -75,7 +75,7 @@
                         @csrf
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Website Name</label>
-                            <input type="text" name="category_bn"
+                            <input type="text" name="website_name"
                                 class="form-control @error('category_bn') is-invalid @enderror" id="exampleInputEmail1"
                                 aria-describedby="emailHelp">
                             @error('category_bn')
@@ -86,7 +86,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Website Link</label>
-                            <input type="text" name="category_en"
+                            <input type="text" name="website_link"
                                 class="form-control @error('category_en') is-invalid @enderror" id="exampleInputPassword1">
                             @error('category_en')
                                 <span class="invalid-feedback" role="alert">
