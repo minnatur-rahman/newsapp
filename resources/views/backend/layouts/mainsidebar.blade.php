@@ -164,7 +164,7 @@
               <li class="nav-item">
                 <a href="{{ route('website.setting') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Website Setting</p>
+                  <p>Importent Website Setting</p>
                 </a>
               </li>
             </ul>

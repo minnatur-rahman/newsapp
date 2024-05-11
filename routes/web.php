@@ -110,9 +110,12 @@ Route::middleware(['auth', 'admin'])->group(function () {
        Route::post('/livetv/update/{id}','LiveTvUpdate')->name('livetv.update');
        Route::get('/livetv/deactive/{id}','LiveTVDeActive')->name('livetv.deactive');
        Route::get('/livetv/active/{id}','LiveTVActive')->name('livetv.active');
-       //___Live Tv setting___//
+       //___Notice setting___//
        Route::get('/notice/setting','NoticeSetting')->name('notice.setting');
        Route::post('/notice/update/{id}','NoticeUpdate')->name('notice.update');
        Route::get('/notice/deactive/{id}','NoticeDeActive')->name('notice.deactive');
        Route::get('/notice/active/{id}','NoticeActive')->name('notice.active');
+       //___Important Website___//
+       Route::get('/important/website','ImportantWebsite')->name('important.website');
+       Route::post('/notice/update/{id}','NoticeUpdate')->name('notice.update');
     });
