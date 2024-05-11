@@ -113,4 +113,6 @@ Route::middleware(['auth', 'admin'])->group(function () {
        //___Live Tv setting___//
        Route::get('/notice/setting','NoticeSetting')->name('notice.setting');
        Route::post('/notice/update/{id}','NoticeUpdate')->name('notice.update');
+       Route::get('/notice/deactive/{id}','NoticeDeActive')->name('notice.deactive');
+       Route::get('/notice/active/{id}','NoticeActive')->name('notice.active');
     });
