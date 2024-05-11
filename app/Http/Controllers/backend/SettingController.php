@@ -121,4 +121,40 @@ class SettingController extends Controller
         toastr()->success('Live TV off your website', 'Congrats', ['timeOut' => 5000]);
         return redirect()->back();
     }
+
+    public function NoticeSetting()
+    {
+        $notice = DB::table('notices')->first();
+        return view('backend.setting.notice',compact('notice'));
+    }
+
+    public function NoticeUpdate(Request $request,$id)
+    {
+        DB::table('notices')->where('id',$id)->update([
+            'notice' => $request->notice,
+    ]);
+    toastr()->success('Data has been update successfully!', 'Congrats', ['timeOut' => 5000]);
+    return redirect()->back();
+    }
+
+    public function NoticeActive($id)
+    {
+        DB::table('notices')->where('id',$id)->update(['status' => 1]);
+        toastr()->success('Notice on your website', 'Congrats', ['timeOut' => 5000]);
+        return redirect()->back();
+    }
+
+    public function NoticeDeActive($id)
+    {
+        DB::table('notices')->where('id',$id)->update(['status' => 0]);
+        toastr()->success('Notice off your website', 'Congrats', ['timeOut' => 5000]);
+        return redirect()->back();
+    }
+
+    public function ImportantWebsite()
+    {
+        $web = DB::table('websites')->first();
+        return view('backend.setting.website',compact('web'));
+    }
+
 }

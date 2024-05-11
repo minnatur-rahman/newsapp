@@ -29,8 +29,8 @@
             <table id="example1" class="table table-bordered table-striped">
                 <thead>
                     <tr>
-                        <th>Category Name Bangla</th>
-                        <th>Category Name English</th>
+                        <th>Website Name</th>
+                        <th>Website Link</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -49,8 +49,8 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th>Category Name Bangla</th>
-                        <th>Category Name English</th>
+                        <th>Website Name</th>
+                        <th>Website Link</th>
                         <th>Action</th>
                     </tr>
                 </tfoot>

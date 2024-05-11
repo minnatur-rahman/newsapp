@@ -162,7 +162,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('website.setting') }}" class="nav-link">
+                <a href="{{ route('important.website') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Importent Website Setting</p>
                 </a>
