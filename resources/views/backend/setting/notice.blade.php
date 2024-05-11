@@ -29,9 +29,9 @@
                     <div class="modal-header">
                         <h4 class="modal-title">Notice Setting</h4>
                         @if ($notice->status==1)
-                            <a class="btn btn-danger" style="float: right" href="{{ route('livetv.deactive',$notice->id) }}">Deactive</a>
+                            <a class="btn btn-danger" style="float: right" href="{{ route('notice.deactive',$notice->id) }}">Deactive</a>
                         @else
-                            <a class="btn btn-success" style="float: right" href="{{ route('livetv.active',$notice->id) }}">Active</a>
+                            <a class="btn btn-success" style="float: right" href="{{ route('notice.active',$notice->id) }}">Active</a>
                         @endif
                     </div>
                     <div class="modal-body">
@@ -40,7 +40,7 @@
                             @csrf
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Notice</label>
-                                <textarea type="text" name="embed_code" class="form-control" aria-describedby="emailHelp" required>
+                                <textarea type="text" name="notice" class="form-control" aria-describedby="emailHelp" required>
                                     {{ $notice->notice }}
                                 </textarea>
                                 @if ($notice->status==1)
