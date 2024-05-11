@@ -28,25 +28,25 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title">Notice Setting</h4>
-                        @if ($tv->status==1)
-                            <a class="btn btn-danger" style="float: right" href="{{ route('livetv.deactive',$tv->id) }}">Deactive</a>
+                        @if ($notice->status==1)
+                            <a class="btn btn-danger" style="float: right" href="{{ route('livetv.deactive',$notice->id) }}">Deactive</a>
                         @else
-                            <a class="btn btn-success" style="float: right" href="{{ route('livetv.active',$tv->id) }}">Active</a>
+                            <a class="btn btn-success" style="float: right" href="{{ route('livetv.active',$notice->id) }}">Active</a>
                         @endif
                     </div>
                     <div class="modal-body">
 
-                        <form action="{{ route('livetv.update',$tv->id) }}" method="POST">
+                        <form action="{{ route('notice.update',$notice->id) }}" method="POST">
                             @csrf
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Embed Code</label>
+                                <label for="exampleInputEmail1" class="form-label">Notice</label>
                                 <textarea type="text" name="embed_code" class="form-control" aria-describedby="emailHelp" required>
-                                    {{ $tv->embed_code }}
+                                    {{ $notice->notice }}
                                 </textarea>
-                                @if ($tv->status==1)
-                                     <small class="text-success">Now Live TV are Active</small>
+                                @if ($notice->status==1)
+                                     <small class="text-success">Now Notice are Active</small>
                                 @else
-                                     <small class="text-danger">Now Live TV are Deactive</small>
+                                     <small class="text-danger">Now Notice are Deactive</small>
                                 @endif
                             </div>
                             <button type="submit" class="btn btn-success">Update</button>
