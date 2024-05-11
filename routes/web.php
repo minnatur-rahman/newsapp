@@ -16,7 +16,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/home',[HomeController::class, 'Index'])->middleware(['auth', 'admin'])->name('home');
+Route::get('/home',[HomeController::class, 'Index'])->middleware(['auth', 'admin'])->name('home');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -34,7 +34,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     Route::controller(AdminController::class)->group(function () {
         Route::get('/admin/dashboard','Index')->name('admindashboard');
-        // Route::get('/admin/login', 'Login');
+        Route::get('/admin/login', 'Login');
     });
 
 
