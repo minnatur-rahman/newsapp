@@ -112,5 +112,5 @@ Route::middleware(['auth', 'admin'])->group(function () {
        Route::get('/livetv/active/{id}','LiveTVActive')->name('livetv.active');
        //___Live Tv setting___//
        Route::get('/notice/setting','NoticeSetting')->name('notice.setting');
-       Route::post('/livetv/update/{id}','LiveTvUpdate')->name('livetv.update');
+       Route::post('/notice/update/{id}','NoticeUpdate')->name('notice.update');
     });
