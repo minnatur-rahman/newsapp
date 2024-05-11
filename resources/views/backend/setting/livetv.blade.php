@@ -29,9 +29,9 @@
                     <div class="modal-header">
                         <h4 class="modal-title">Live TV Setting</h4>
                         @if ($tv->status==1)
-                            <a class="btn btn-danger" style="float: right" href="{{ route('livetv.deactive') }}">Deactive</a>
+                            <a class="btn btn-danger" style="float: right" href="{{ route('livetv.deactive',$tv->id) }}">Deactive</a>
                         @else
-                            <a class="btn btn-success" style="float: right" href="{{ route('livetv.active') }}">Active</a>
+                            <a class="btn btn-success" style="float: right" href="{{ route('livetv.active',$tv->id) }}">Active</a>
                         @endif
                     </div>
                     <div class="modal-body">

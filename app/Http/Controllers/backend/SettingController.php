@@ -98,4 +98,27 @@ class SettingController extends Controller
         $tv = DB::table('livetvs')->first();
         return view('backend.setting.livetv',compact('tv'));
     }
+
+    public function LiveTvUpdate(Request $request,$id)
+    {
+        DB::table('livetvs')->where('id',$id)->update([
+            'embed_code' => $request->embed_code,
+    ]);
+    toastr()->success('Data has been update successfully!', 'Congrats', ['timeOut' => 5000]);
+    return redirect()->back();
+    }
+
+    public function LiveTVActive($id)
+    {
+        DB::table('livetvs')->where('id',$id)->update(['status' => 1]);
+        toastr()->success('Successfully Live TV on your website', 'Congrats', ['timeOut' => 5000]);
+        return redirect()->back();
+    }
+
+    public function LiveTVDeActive($id)
+    {
+        DB::table('livetvs')->where('id',$id)->update(['status' => 0]);
+        toastr()->success('Live TV off your website', 'Congrats', ['timeOut' => 5000]);
+        return redirect()->back();
+    }
 }
