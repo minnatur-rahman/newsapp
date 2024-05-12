@@ -43,6 +43,8 @@
                             <td>
                                 @if ($row->type==1)
                                     <span class="badge badge-success">Big Photo</span>
+                                @else
+                                    <span class="badge badge-info">Small Photo</span>
                                 @endif
                             </td>
                             <td>
@@ -72,7 +74,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Insert New Category</h4>
+                    <h4 class="modal-title">Insert New Photo</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -81,25 +83,26 @@
                     <form action="{{ route('category.store') }}" method="POST">
                         @csrf
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Category Name Bangla</label>
-                            <input type="text" name="category_bn"
-                                class="form-control @error('category_bn') is-invalid @enderror" id="exampleInputEmail1"
+                            <label for="exampleInputEmail1" class="form-label">Title</label>
+                            <input type="text" name="title"
+                                class="form-control @error('title') is-invalid @enderror" id="exampleInputEmail1"
                                 aria-describedby="emailHelp">
-                            @error('category_bn')
+                            @error('title')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Category Name English</label>
-                            <input type="text" name="category_en"
-                                class="form-control @error('category_en') is-invalid @enderror" id="exampleInputPassword1">
-                            @error('category_en')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
+                            <label for="exampleInputPassword1" class="form-label">Photo</label>
+                            <input type="file" name="Photo"
+                                class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Type</label>
+                           <select class="from-control" name="type" id="exampleInputPassword1">
+                                <option value="1">Big Photo</option>
+                           </select>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
