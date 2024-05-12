@@ -3,6 +3,7 @@
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\DistrictController;
+use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\PostController;
 use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\SubcategoryController;
@@ -75,11 +76,6 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     });
 
-
-});
-
-
-
     //___Posts Routes___//
     Route::controller(PostController::class)->group(function(){
         Route::get('/create/post', 'Create')->name('create.post');
@@ -121,3 +117,11 @@ Route::middleware(['auth', 'admin'])->group(function () {
        Route::get('/website/edit/{id}','WebsiteEdit')->name('website.edit');
        Route::post('/website/update/{id}','WebsiteUpdate')->name('website.update');
     });
+
+    Route::controller(GalleryController::class)->group(function(){
+      //___Photo Gallery___//
+      Route::get('/photo/gallery','PhotoGallery')->name('photos.gallery');
+
+    });
+
+});
