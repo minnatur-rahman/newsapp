@@ -174,4 +174,14 @@ class SettingController extends Controller
         return view('backend.setting.websiteEdit',compact('website'));
     }
 
+    public function WebsiteUpdate(Request $request,$id)
+    {
+        DB::table('websites')->where('id',$id)->update([
+            'website_name' => $request->website_name,
+            'website_link' => $request->website_link,
+    ]);
+       toastr()->success('Data has been update successfully!', 'Congrats', ['timeOut' => 5000]);
+       return redirect()->route('important.website');
+    }
+
 }

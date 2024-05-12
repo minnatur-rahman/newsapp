@@ -39,8 +39,12 @@
                     @foreach ($photo as $row)
                         <tr>
                             <td>{{ $row->title }}</td>
-                            <td><img src="{{ asset($row->photo) }}" style="height" alt=""></td>
-                            <td>{{ $row->type }}</td>
+                            <td><img src="{{ asset($row->photo) }}" style="height: 70px; width: 90px;" alt=""></td>
+                            <td>
+                                @if ($row->type==1)
+                                    <span class="badge badge-success">Big Photo</span>
+                                @endif
+                            </td>
                             <td>
                                 <a href="{{ route('category.edit',$row->id) }}" class="btn btn-info"><i class="fa fa-edit"></i></a>
                                 <a href="{{ url('categories/delete/'.$row->id) }}" class="btn btn-danger" onclick="confirmation(event)" ><i class="fa fa-trash"></i></a>
