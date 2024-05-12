@@ -32,7 +32,7 @@
                     </div>
                     <div class="modal-body">
 
-                        <form action="{{ route('category.update',$website->id) }}" method="POST">
+                        <form action="{{ route('website.update',$website->id) }}" method="POST">
                             @csrf
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Weblite Name </label>
