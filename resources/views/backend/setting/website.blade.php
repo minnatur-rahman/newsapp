@@ -40,7 +40,7 @@
                             <td>{{ $row->website_name }}</td>
                             <td>{{ $row->website_link }}</td>
                             <td>
-                                <a href="{{ route('category.edit',$row->id) }}" class="btn btn-info"><i class="fa fa-edit"></i></a>
+                                <a href="{{ route('website.edit',$row->id) }}" class="btn btn-info"><i class="fa fa-edit"></i></a>
                                 <a href="{{ url('categories/delete/'.$row->id) }}" class="btn btn-danger" onclick="confirmation(event)" ><i class="fa fa-trash"></i></a>
                             </td>
 
