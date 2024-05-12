@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Social;
+use App\Models\Website;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -133,8 +134,8 @@ class SettingController extends Controller
         DB::table('notices')->where('id',$id)->update([
             'notice' => $request->notice,
     ]);
-    toastr()->success('Data has been update successfully!', 'Congrats', ['timeOut' => 5000]);
-    return redirect()->back();
+        toastr()->success('Data has been update successfully!', 'Congrats', ['timeOut' => 5000]);
+        return redirect()->back();
     }
 
     public function NoticeActive($id)
@@ -153,8 +154,24 @@ class SettingController extends Controller
 
     public function ImportantWebsite()
     {
-        $web = DB::table('websites')->first();
+        $web = DB::table('websites')->get();
         return view('backend.setting.website',compact('web'));
+    }
+
+    public function WebsiteStore(Request $request)
+    {
+        DB::table('websites')->insert([
+            'website_name' => $request->website_name,
+            'website_link' => $request->website_link,
+    ]);
+       toastr()->success('Data has been insert successfully!', 'Congrats', ['timeOut' => 5000]);
+       return redirect()->back();
+    }
+
+    public function WebsiteEdit($id)
+    {
+        $website = Website::find($id);
+        return view('backend.setting.websiteEdit',compact('website'));
     }
 
 }

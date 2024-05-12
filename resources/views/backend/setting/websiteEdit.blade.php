@@ -35,16 +35,16 @@
                         <form action="{{ route('category.update',$website->id) }}" method="POST">
                             @csrf
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Category Name Bangla</label>
-                                <input type="text" name="category_bn"
-                                    class="form-control" value="{{ $website->category_bn }}"
+                                <label for="exampleInputEmail1" class="form-label">Weblite Name </label>
+                                <input type="text" name="website_name"
+                                    class="form-control" value="{{ $website->website_name }}"
                                     aria-describedby="emailHelp" required>
 
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Category Name English</label>
-                                <input type="text" name="category_en"
-                                    class="form-control" value="{{ $website->category_en }}" required>
+                                <label for="exampleInputPassword1" class="form-label">Weblite link</label>
+                                <input type="text" name="website_link"
+                                    class="form-control" value="{{ $website->website_link }}" required>
 
                             </div>
                             <button type="submit" class="btn btn-primary">Update</button>
