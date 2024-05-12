@@ -4,12 +4,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Edit Weblite</h1>
+                    <h1 class="m-0 text-dark">Weblites</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Edit Weblite</li>
+                        <li class="breadcrumb-item active">Weblites</li>
                     </ol>
                 </div>
             </div>
@@ -20,41 +20,39 @@
 
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Edit Weblite</h3>
-            <button class="btn btn-danger btn-sm" style="float:right" data-toggle="modal" data-target="#modal-default">Add
-                New</button>
+            <h3 class="card-title">Weblites Modify</h3>
         </div>
         <!-- /.card-header -->
-        <div class="card-body">
-            <table id="example1" class="table table-bordered table-striped">
-                <thead>
-                    <tr>
-                        <th>Website Name</th>
-                        <th>Website Link</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($website as $row)
-                        <tr>
-                            <td>{{ $row->website_name }}</td>
-                            <td>{{ $row->website_link }}</td>
-                            <td>
-                                <a href="{{ route('website.edit',$row->id) }}" class="btn btn-info"><i class="fa fa-edit"></i></a>
-                                <a href="{{ url('categories/delete/'.$row->id) }}" class="btn btn-danger" onclick="confirmation(event)" ><i class="fa fa-trash"></i></a>
-                            </td>
+        <div class="col-6">
+            <div class="card-body">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Update Weblites</h4>
 
-                        </tr>
-                    @endforeach
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <th>Website Name</th>
-                        <th>Website Link</th>
-                        <th>Action</th>
-                    </tr>
-                </tfoot>
-            </table>
+                    </div>
+                    <div class="modal-body">
+
+                        <form action="{{ route('category.update',$website->id) }}" method="POST">
+                            @csrf
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Category Name Bangla</label>
+                                <input type="text" name="category_bn"
+                                    class="form-control" value="{{ $website->category_bn }}"
+                                    aria-describedby="emailHelp" required>
+
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Category Name English</label>
+                                <input type="text" name="category_en"
+                                    class="form-control" value="{{ $website->category_en }}" required>
+
+                            </div>
+                            <button type="submit" class="btn btn-primary">Update</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
         </div>
         <!-- /.card-body -->
     </div>
