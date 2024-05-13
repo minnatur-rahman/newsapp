@@ -124,6 +124,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
       Route::post('/photo/store','PhotoStore')->name('photo.store');
       Route::get('/photo/edit/{id}','PhotoEdit')->name('photo.edit');
       Route::post('/photo/update/{id}','PhotoUpdate')->name('photo.update');
+      Route::get('/photo/delete/{id}', 'PhotoDestroy');
     });
 
 });
