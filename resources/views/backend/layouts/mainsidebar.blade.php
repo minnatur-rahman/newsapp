@@ -188,7 +188,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('seo.setting') }}" class="nav-link">
+                <a href="{{ route('video.gallery') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>video Gallery</p>
                 </a>

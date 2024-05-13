@@ -125,6 +125,10 @@ Route::middleware(['auth', 'admin'])->group(function () {
       Route::get('/photo/edit/{id}','PhotoEdit')->name('photo.edit');
       Route::post('/photo/update/{id}','PhotoUpdate')->name('photo.update');
       Route::get('/photo/delete/{id}', 'PhotoDestroy');
+      //___video Gallery___//
+      Route::get('/video/gallery','VideoGallery')->name('video.gallery');
+      Route::post('/video/store','VideoStore')->name('video.store');
+
     });
 
 });
