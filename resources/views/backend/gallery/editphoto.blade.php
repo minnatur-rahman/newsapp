@@ -30,7 +30,7 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form action="{{ route('') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('photo.update',$photo->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
 
@@ -71,7 +71,7 @@
                                 </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-warning">Submit</button>
+                                <button type="submit" class="btn btn-warning">Update</button>
                             </div>
                         </form>
                     </div>
