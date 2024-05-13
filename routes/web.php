@@ -121,7 +121,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::controller(GalleryController::class)->group(function(){
       //___Photo Gallery___//
       Route::get('/photo/gallery','PhotoGallery')->name('photos.gallery');
-
+      Route::post('/photo/store','PhotoStore')->name('photo.store');
     });
 
 });

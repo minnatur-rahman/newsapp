@@ -80,13 +80,13 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="{{ route('category.store') }}" method="POST">
+                    <form action="{{ route('photo.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Title</label>
                             <input type="text" name="title"
                                 class="form-control @error('title') is-invalid @enderror" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
+                                aria-describedby="emailHelp" required>
                             @error('title')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -96,12 +96,13 @@
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Photo</label>
                             <input type="file" name="Photo"
-                                class="form-control" id="exampleInputPassword1">
+                                class="form-control" id="exampleInputPassword1" required>
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Type</label>
                            <select class="from-control" name="type" id="exampleInputPassword1">
                                 <option value="1">Big Photo</option>
+                                <option value="0">Small Photo</option>
                            </select>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
