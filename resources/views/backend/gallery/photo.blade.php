@@ -95,7 +95,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Photo</label>
-                            <input type="file" name="Photo"
+                            <input type="file" name="photo"
                                 class="form-control" id="exampleInputPassword1" required>
                         </div>
                         <div class="mb-3">
