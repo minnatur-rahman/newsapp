@@ -30,7 +30,7 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form action="#" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
 
@@ -42,8 +42,10 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="exampleInputPassword1">Type</label>
-                                        <input type="text" name="type" value="{{ $photo->type }}" class="form-control"
-                                            id="exampleInputPassword1" placeholder="Type Here English">
+                                        <select class="from-control"  value="{{ $photo->type }}"  name="type" id="exampleInputPassword1">
+                                            <option value="1">Big Photo</option>
+                                            <option value="0">Small Photo</option>
+                                       </select>
                                     </div>
                                 </div>
 
@@ -53,8 +55,8 @@
                                         <label for="exampleInputFile">File input</label>
                                         <div class="input-group">
                                             <div class="custom-file">
-                                                <input type="file" name="image" class="custom-file-input" id="exampleInputFile">
-                                                <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                                <input type="file" name="photo" class="custom-file-input" id="exampleInputFile">
+                                                <label class="custom-file-label" for="exampleInputFile">Choose Photo</label>
                                             </div>
                                             <div class="input-group-append">
                                                 <span class="input-group-text">Upload</span>
@@ -62,9 +64,9 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
-                                        <label for="exampleInputFile">Old Image</label><br>
+                                        <label for="exampleInputFile">Old Photo</label><br>
                                         <img src="{{ URL::to($photo->photo) }}" style="height: 50px; width: 70px;" alt="">
-                                        <input type="hidden" name="oldImage" value="{{ $photo->photo }}">
+                                        <input type="hidden" name="oldPhoto" value="{{ $photo->photo }}">
                                     </div>
                                 </div>
                             <!-- /.card-body -->
