@@ -128,7 +128,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
       //___video Gallery___//
       Route::get('/video/gallery','VideoGallery')->name('video.gallery');
       Route::post('/video/store','VideoStore')->name('video.store');
-
+      Route::get('/video/edit/{id}','VideoEdit')->name('video.edit');
     });
 
 });
