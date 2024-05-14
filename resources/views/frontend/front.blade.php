@@ -45,15 +45,47 @@
     <!-- Preloader Start -->
 
     <section class="hdr_section">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col-xs-6 col-md-2 col-sm-4">
                     <div class="header_logo">
-                        <a href=""><img src="" alt=""></a>
+                        <a href="index.html"><img src="{{ asset('frontend') }}/assets/img/logo/logo.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-xs-6 col-md-8 col-sm-8">
+                    <div class="manue_area" id="manue_area">
+                        <div class="manue_bottom">
+                            <nav role="navigation" class="navbar navbar-default mainmenu">
 
+                                <div class="navbar-header">
+                                   <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle" >
+
+                                    <span class="sr-only">Toggle Navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                   </button>
+                                </div>
+
+                                 <div class="collapse navbar-collapse"      id="navbarCollapse">
+                                    <ul class="nav navbar-nav">
+
+                                        @foreach ($category as $row)
+                                           <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ $row->category_bn }}</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Home</a></li>
+                                                <<li><a href="#">Home</a></li>
+                                            </ul>
+                                           </li>
+                                        @endforeach
+
+                                    </ul>
+                                </div>
+
+                            </nav>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
