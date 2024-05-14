@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('frontend.front');
+    return view('frontend.index');
 });
 
 Route::get('/home',[HomeController::class, 'Index'])->middleware(['auth', 'admin'])->name('home');

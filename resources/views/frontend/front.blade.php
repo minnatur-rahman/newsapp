@@ -1,3 +1,8 @@
+@php
+    $category = DB::table('categories')->orderBy('id','ASC')->get();
+@endphp
+
+
 <!doctype html>
 <html class="no-js" lang="zxx">
     <head>
@@ -94,18 +99,7 @@
                                     <nav>
                                         <ul id="navigation">
                                             <li><a href="index.html">Home</a></li>
-                                            <li><a href="categori.html">Category</a></li>
-                                            <li><a href="about.html">About</a></li>
-                                            <li><a href="latest_news.html">Latest News</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
-                                            <li><a href="#">Pages</a>
-                                                <ul class="submenu">
-                                                    <li><a href="elements.html">Element</a></li>
-                                                    <li><a href="blog.html">Blog</a></li>
-                                                    <li><a href="single-blog.html">Blog Details</a></li>
-                                                    <li><a href="details.html">Categori Details</a></li>
-                                                </ul>
-                                            </li>
+
                                         </ul>
                                     </nav>
                                 </div>
@@ -135,7 +129,7 @@
 
     @yield('content')
 
-   <footer>
+<footer>
        <!-- Footer Start-->
        <div class="footer-area footer-padding fix">
             <div class="container">
@@ -213,7 +207,7 @@
                         <div class="col-lg-6">
                             <div class="footer-copy-right">
                                 <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+      Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                             </div>
                         </div>
@@ -231,7 +225,7 @@
            </div>
        </div>
        <!-- Footer End-->
-   </footer>
+</footer>
 
 	<!-- JS here -->
 
