@@ -114,6 +114,25 @@ class GalleryController extends Controller
 
      }
 
+     public function VideoEdit($id)
+    {
+        $video=DB::table('videos')->where('id',$id)->first();
+        return view('backend.gallery.editvideo',compact('video'));
+    }
+
+    public function VideoUpdate(Request $request,$id)
+    {
+        $data = array();
+        $data['title']=$request->title;
+        $data['embed_code']=$request->embed_code;
+        $data['type']=$request->type;
+
+        DB::table('videos')->where('id',$id)->update($data);
+
+        toastr()->success('Video has been update successfully!', 'Congrats', ['timeOut' => 5000]);
+        return redirect()->route('video.gallery');
+    }
+
 
 
 }
