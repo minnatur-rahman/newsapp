@@ -30,7 +30,7 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form action="{{ route('video.update',$video->id) }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('video.update',$video->id) }}" method="POST">
                             @csrf
                             <div class="card-body">
 
@@ -48,8 +48,6 @@
                                        </select>
                                     </div>
                                 </div>
-
-
                                 <div class="row">
 
                                     <div class="mb-3">
