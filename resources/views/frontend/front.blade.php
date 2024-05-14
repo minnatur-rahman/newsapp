@@ -44,7 +44,22 @@
     </div> -->
     <!-- Preloader Start -->
 
-    <header>
+    <section class="hdr_section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-6 col-md-2 col-sm-4">
+                    <div class="header_logo">
+                        <a href=""><img src="" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-md-8 col-sm-8">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- <header>
         <!-- Header Start -->
        <div class="header-area">
             <div class="main-header ">
@@ -78,11 +93,7 @@
                                     <a href="index.html"><img src="{{ asset('frontend') }}/assets/img/logo/logo.png" alt=""></a>
                                 </div>
                             </div>
-                            <div class="col-xl-9 col-lg-9 col-md-9">
-                                <div class="header-banner f-right ">
-                                    <img src="{{ asset('frontend') }}/assets/img/hero/header_card.jpg" alt="">
-                                </div>
-                            </div>
+
                         </div>
                    </div>
                 </div>
@@ -98,7 +109,10 @@
                                 <div class="main-menu d-none d-md-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a href="index.html">Home</a></li>
+                                            @foreach ($category as $row)
+                                                  <li><a href="index.html">{{ $row->category_bn }}</a></li>
+                                            @endforeach
+
 
                                         </ul>
                                     </nav>
@@ -125,7 +139,7 @@
             </div>
        </div>
         <!-- Header End -->
-    </header>
+    </header> --}}
 
     @yield('content')
 
