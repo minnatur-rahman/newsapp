@@ -13,6 +13,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="manifest" href="site.webmanifest">
 		<link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend') }}/assets/img/favicon.ico">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
 		<!-- CSS here -->
             <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/bootstrap.min.css">
@@ -44,134 +45,46 @@
     </div> -->
     <!-- Preloader Start -->
 
-    <section class="hdr_section">
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container">
-            <div class="row">
-                <div class="col-xs-6 col-md-2 col-sm-4">
-                    <div class="header_logo">
-                        <a href="index.html"><img src="{{ asset('frontend') }}/assets/img/logo/logo.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-md-8 col-sm-8">
-                    <div class="manue_area" id="manue_area">
-                        <div class="manue_bottom">
-                            <nav role="navigation" class="navbar navbar-default mainmenu">
-
-                                <div class="navbar-header">
-                                   <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle" >
-
-                                    <span class="sr-only">Toggle Navigation</span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                   </button>
-                                </div>
-
-                                 <div class="collapse navbar-collapse"      id="navbarCollapse">
-                                    <ul class="nav navbar-nav">
-
-                                        @foreach ($category as $row)
-                                           <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ $row->category_bn }}</a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="#">Home</a></li>
-                                                <<li><a href="#">Home</a></li>
-                                            </ul>
-                                           </li>
-                                        @endforeach
-
-                                    </ul>
-                                </div>
-
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
         </div>
-    </section>
-
-    {{-- <header>
-        <!-- Header Start -->
-       <div class="header-area">
-            <div class="main-header ">
-                <div class="header-top black-bg d-none d-md-block">
-                   <div class="container">
-                       <div class="col-xl-12">
-                            <div class="row d-flex justify-content-between align-items-center">
-                                <div class="header-info-left">
-                                    <ul>
-                                        <li><img src="{{ asset('frontend') }}/assets/img/icon/header_icon1.png" alt="">34ºc, Sunny </li>
-                                        <li><img src="{{ asset('frontend') }}/assets/img/icon/header_icon1.png" alt="">Tuesday, 18th June, 2019</li>
-                                    </ul>
-                                </div>
-                                <div class="header-info-right">
-                                    <ul class="header-social">
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                       <li> <a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                       </div>
-                   </div>
-                </div>
-                <div class="header-mid d-none d-md-block">
-                   <div class="container">
-                        <div class="row d-flex align-items-center">
-                            <!-- Logo -->
-                            <div class="col-xl-3 col-lg-3 col-md-3">
-                                <div class="logo">
-                                    <a href="index.html"><img src="{{ asset('frontend') }}/assets/img/logo/logo.png" alt=""></a>
-                                </div>
-                            </div>
-
-                        </div>
-                   </div>
-                </div>
-               <div class="header-bottom header-sticky">
-                    <div class="container">
-                        <div class="row align-items-center">
-                            <div class="col-xl-10 col-lg-10 col-md-12 header-flex">
-                                <!-- sticky -->
-                                    <div class="sticky-logo">
-                                        <a href="index.html"><img src="{{ asset('frontend') }}/assets/img/logo/logo.png" alt=""></a>
-                                    </div>
-                                <!-- Main-menu -->
-                                <div class="main-menu d-none d-md-block">
-                                    <nav>
-                                        <ul id="navigation">
-                                            @foreach ($category as $row)
-                                                  <li><a href="index.html">{{ $row->category_bn }}</a></li>
-                                            @endforeach
+      </nav>
 
 
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                            <div class="col-xl-2 col-lg-2 col-md-4">
-                                <div class="header-right-btn f-right d-none d-lg-block">
-                                    <i class="fas fa-search special-tag"></i>
-                                    <div class="search-box">
-                                        <form action="#">
-                                            <input type="text" placeholder="Search">
 
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Mobile Menu -->
-                            <div class="col-12">
-                                <div class="mobile_menu d-block d-md-none"></div>
-                            </div>
-                        </div>
-                    </div>
-               </div>
-            </div>
-       </div>
-        <!-- Header End -->
-    </header> --}}
 
     @yield('content')
 
@@ -313,6 +226,8 @@
 		<!-- Jquery Plugins, main Jquery -->
         <script src="{{ asset('frontend') }}/assets/js/plugins.js"></script>
         <script src="{{ asset('frontend') }}/assets/js/main.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
     </body>
 </html>
