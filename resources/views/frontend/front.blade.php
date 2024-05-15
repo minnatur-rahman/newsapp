@@ -56,12 +56,14 @@
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
                 @foreach ($category as $row )
+                @php
+                    $subcategory=DB::table('subcategories')->where('category_id',$row->id)->get();
+                @endphp
               <li class="nav-item">
                 <a class="nav-link active text-white" aria-current="page" href="#">{{ $row->category_bn }}</a>
               </li>
-              {{-- <li class="nav-item">
-                <a class="nav-link text-white" href="#">Link</a>
-              </li>
+              @endforeach
+
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Dropdown
@@ -73,20 +75,11 @@
                   <li><a class="dropdown-item" href="#">Something else here</a></li>
                 </ul>
               </li>
-              <li class="nav-item">
-                <a class="nav-link disabled text-white" aria-disabled="true">Disabled</a>
-              </li> --}}
-              @endforeach
 
             </ul>
             <form class="d-flex" role="search">
-              <div>
-                <input class="form-control me-2" type="search" placeholder="search">
-              </div>
-              <div>
-                <button class="btn btn-sm-success"></button>
-              </div>
-
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success text-white" type="submit">Search</button>
             </form>
           </div>
         </div>
