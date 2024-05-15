@@ -89,7 +89,7 @@
 
 
     <section class="her_section">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col-xs-6 col-md-2 col-sm-4">
                     <div class="header-logo">
@@ -112,7 +112,10 @@
                                 <ul class="nav navbar-nav">
 
                                     <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"></a>
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Home</a></li>
+                                        </ul>
                                     </li>
 
                                 </ul>
@@ -121,6 +124,14 @@
                         </nav>
                       </div>
                    </div>
+                </div>
+                <div class="col-xs-12 col-md-2 col-sm-12">
+                    <div class="header-icon">
+                        <ul>
+                            <!--verson start -->
+                            <li class="verson"><a href="#">English</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
