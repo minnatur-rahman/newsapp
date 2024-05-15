@@ -47,98 +47,69 @@
     </div> -->
     <!-- Preloader Start -->
 
-
-    {{-- <nav class="navbar navbar-expand-lg bg-danger">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container">
-            <a class="navbar-brand text-white" href="#">NEWS TODAY</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-
-                    @foreach ($category as $cat)
-                    @php
-                        $subcategories = DB::table('subcategories')->where('category_id', $cat->id)->get();
-                    @endphp
-
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-                            {{ $cat->category_bn }}
-                        </a>
-                        <ul class="dropdown-menu">
-                            @foreach ($subcategories as $subcat)
-                                <li><a href="#">{{ $subcat->subcategory_bn }}</a></li>
-                            @endforeach
-                        </ul>
-                    </li>
-                @endforeach
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success text-white" type="submit">Search</button>
-                </form>
-            </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
         </div>
-    </nav> --}}
+      </nav>
 
 
 
-
-
-    <section class="her_section">
+      <nav class="navbar navbar-expand-lg bg-info">
         <div class="container">
-            <div class="row">
-                <div class="col-xs-6 col-md-2 col-sm-4">
-                    <div class="header-logo">
-                        <a href=""><img src="" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-md-8 col-sm-8">
-                   <div id="menu_area" class="menu_area">
-                      <div class="menu_bottom">
-                        <nav role="navigation" class="navbar navbar-default mainmenu">
 
-                            <div class="navbar-header">
-                                <button>
-                                    <span class="sr-only">Toggle Navigation</span>
-                                    <span class="icon"></span>
-                                </button>
-                            </div>
 
-                            <div id="navbarCollapse" class="collapse navbar-collapse">
-                                <ul class="nav navbar-nav">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#">Home</a></li>
-                                        </ul>
-                                    </li>
+              <li class="nav-item dropdown text-center">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
 
-                                </ul>
-                            </div>
+            </ul>
 
-                        </nav>
-                      </div>
-                   </div>
-                </div>
-                <div class="col-xs-12 col-md-2 col-sm-12">
-                    <div class="header-icon">
-                        <ul>
-                            <!--verson start -->
-                            <li class="verson"><a href="#">English</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
-
-
-
+      </nav>
 
 
 
