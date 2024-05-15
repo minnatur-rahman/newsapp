@@ -48,7 +48,7 @@
     <!-- Preloader Start -->
 
 
-    <nav class="navbar navbar-expand-lg bg-danger">
+    {{-- <nav class="navbar navbar-expand-lg bg-danger">
         <div class="container">
             <a class="navbar-brand text-white" href="#">NEWS TODAY</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -82,7 +82,45 @@
                 </form>
             </div>
         </div>
-    </nav>
+    </nav> --}}
+
+
+
+
+
+    <section class="her_section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-6 col-md-2 col-sm-4">
+                    <div class="header-logo">
+                        <a href=""><img src="" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-md-8 col-sm-8">
+                   <div id="menu_area" class="menu_area">
+                      <div class="menu_bottom">
+                        <nav role="navigation" class="navbar navbar-default mainmenu">
+
+                            <div class="navbar-header">
+                                <button>
+                                    <span class="sr-only">Toggle Navigation</span>
+                                    <span class="icon"></span>
+                                </button>
+                            </div>
+
+                            <div class="">
+
+                            </div>
+
+                        </nav>
+                      </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 
 
 
