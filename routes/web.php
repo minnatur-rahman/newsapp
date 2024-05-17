@@ -133,3 +133,11 @@ Route::middleware(['auth', 'admin'])->group(function () {
     });
 
 });
+
+
+//___Extra Routes___//
+Route::controller(GalleryController::class)->group(function(){
+    Route::get('/lang/english','LangEnglish')->name('lang.english');
+    Route::get('/lang/bangla','LangBangla')->name('lang.bangla');
+
+});

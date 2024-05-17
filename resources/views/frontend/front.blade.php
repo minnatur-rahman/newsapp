@@ -85,6 +85,18 @@
                 @endforeach
 
             </ul>
+
+            <div class="col-xs-12 col-md-1 col-sm-12">
+                <div class="text-center">
+                    <ul>
+                        @if(session()->get('lang')=='bangla')
+                        <li class="version"><a href="{{ route(lang.english) }}" style="text-decoration: none; text-align: center;">English</a></li>
+                        @else
+                        <li class="version"><a href="{{ route(lang.bangla) }}" style="text-decoration: none; text-align: center;">English</a></li>
+                        @endif
+                    </ul>
+                </div>
+            </div>
             <div class="col-xs-12 col-md-1 col-sm-12">
                 <a href="">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
