@@ -1,5 +1,6 @@
 @php
     $category = DB::table('categories')->orderBy('id', 'ASC')->get();
+    $seo = DB::table('seos')->first();
 @endphp
 
 
@@ -9,7 +10,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>News HTML-5 Template </title>
+    <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
