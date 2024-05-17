@@ -10,7 +10,13 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title></title>
+    <title>{{ $seo->meta_title }}</title>
+    <meta name="author" content="{{ $seo->meta_author }}">
+    <meta name="meta_keyword" content="{{ $seo->meta_keyword }}">
+    <meta name="meta_description" content="{{ $seo->meta_description }}">
+    <meta name="google_analytics" content="{{ $seo->google_analytics }}">
+    <meta name="google_verification" content="{{ $seo->google_verification }}">
+    <meta name="alexa_analytics" content="{{ $seo->alexa_analytics }}">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
@@ -38,9 +44,10 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg bg-danger">
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
-          {{-- <a class="navbar-brand text-white fs-4" href="#">BT-ShoP</a>
+            <div class="row">
+ {{-- <a class="navbar-brand text-white fs-4" href="#">BT-ShoP</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button> --}}
@@ -68,11 +75,17 @@
                 @endforeach
 
             </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-danger" type="submit">Search</button>
-            </form>
+            <div class="col-md-2">
+                <a href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                      </svg>
+                </a>
+            </div>|
+
           </div>
+            </div>
+
         </div>
       </nav>
 
