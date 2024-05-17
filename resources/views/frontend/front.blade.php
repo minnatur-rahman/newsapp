@@ -49,22 +49,22 @@
     </div> -->
     <!-- Preloader Start -->
 
-    <nav class="navbar navbar-expand-lg bg-info">
-        <div class="container">
+    {{-- <nav class="navbar navbar-expand-lg bg-info"> --}}
+        <section class="container bg-info">
             <a class="navbar-brand" href="#">Logo</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
-            </button>
-           
-        
-        </div>
-      </nav>
+            </button>     
+        </section>
+      {{-- </nav> --}}
+
+
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container">
         
     
            <div>
-<div class="collapse navbar-collapse" id="navbarSupportedContent">
+       <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 @foreach ( $category as $cat )
                 <?php
