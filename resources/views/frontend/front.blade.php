@@ -44,14 +44,24 @@
 
 <body>
 
+    <nav class="container-fluid bg-info">
+        <div class="row">
+            <div class="col-md-6 bg-success">
+                <h1 class="test-center">Bangla Desh News</h1>
+            </div>
+        </div>
+    </nav>
+
+
+
     <nav class="navbar navbar-expand-lg">
-        <div class="container">
-            <div class="row">
+      <div class="container">
+        <div class="row">
  {{-- <a class="navbar-brand text-white fs-4" href="#">BT-ShoP</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button> --}}
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="col-md-7 collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 @foreach ($category as $cat)
                     <?php
@@ -75,19 +85,26 @@
                 @endforeach
 
             </ul>
-            <div class="col-md-2">
+            <div class="col-xs-12 col-md-1 col-sm-12">
                 <a href="">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
                       </svg>
                 </a>
-            </div>|
-
-          </div>
             </div>
+            <div class="col-xs-12 col-md-1 col-sm-12">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-newspaper" viewBox="0 0 16 16">
+                    <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5z"/>
+                    <path d="M2 3h10v2H2zm0 3h4v3H2zm0 4h4v1H2zm0 2h4v1H2zm5-6h2v1H7zm3 0h2v1h-2zM7 8h2v1H7zm3 0h2v1h-2zm-3 2h2v1H7zm3 0h2v1h-2zm-3 2h2v1H7zm3 0h2v1h-2z"/>
+                  </svg>
+            </div>
+          </div>
+        </div>
 
         </div>
       </nav>
+
+
 
 
 
