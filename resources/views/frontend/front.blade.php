@@ -31,67 +31,49 @@
     <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/nice-select.css">
     <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/style.css">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
 <body>
 
-    <!-- Preloader Start -->
-    <!-- <div id="preloader-active">
-        <div class="preloader d-flex align-items-center justify-content-center">
-            <div class="preloader-inner position-relative">
-                <div class="preloader-circle"></div>
-                <div class="preloader-img pere-text">
-                    <img src="assets/img/logo/logo.png" alt="">
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Preloader Start -->
-
-    {{-- <nav class="navbar navbar-expand-lg bg-info"> --}}
-        <section class="container bg-info">
-            <a class="navbar-brand" href="#">Logo</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-        </section>
-      {{-- </nav> --}}
-
-
-      <section class="container navbar navbar-expand-lg bg-info">
-
-       <div class="col-md-8">
+    <nav class="navbar navbar-expand-lg bg-danger">
+        <div class="container">
+          {{-- <a class="navbar-brand text-white fs-4" href="#">BT-ShoP</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button> --}}
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                @foreach ( $category as $cat )
-                <?php
-                    $subcategory = DB::table('subcategories')->where('category_id',$cat->id)->get();
-                ?>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      {{ $cat->category_bn }}
-                    </a>
-                    <ul class="dropdown-menu">
+                @foreach ($category as $cat)
+                    <?php
+                    $subcategory = DB::table('subcategories')
+                        ->where('category_id', $cat->id)
+                        ->get();
+                    ?>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            {{ $cat->category_bn }}
+                        </a>
+                        <ul class="dropdown-menu">
 
-                        @foreach ( $subcategory as $subcat )
-                        <li><a class="dropdown-item" href="#">{{ $subcat->subcategory_bn }}</a></li>
-                        @endforeach
+                            @foreach ($subcategory as $subcat)
+                                <li><a class="dropdown-item" href="#">{{ $subcat->subcategory_bn }}</a></li>
+                            @endforeach
 
-                    </ul>
-                  </li>
+                        </ul>
+                    </li>
                 @endforeach
 
             </ul>
-
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-danger" type="submit">Search</button>
+            </form>
           </div>
-          <div>
-
-          </div>
-           </div>
-
         </div>
-      </section>
-      <hr>
+      </nav>
 
 
 
