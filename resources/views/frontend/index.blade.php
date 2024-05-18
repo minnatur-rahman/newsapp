@@ -658,17 +658,42 @@
     @php
         $tv=DB::table('livetvs')->first();
     @endphp
+@if ($tv->status==1)
+<section class="container my-5">
+    <div class="row">
+        <!-- Video Player -->
+        <div class="col-lg-8">
+            <div class="ratio ratio-16x9">
+                {!! $tv->embed_code !!}
+            </div>
+        </div>
 
-    <div class="youtube-area video-padding">
+        <!-- Show Details -->
+        <div class="col-lg-4">
+            <h2>টিভি লাইভ</h2>
+            <p class="lead">Join us for the latest updates and live coverage of our exciting show. Stay tuned and don't miss a moment of the action!</p>
+            <hr>
+            <h4>Schedule</h4>
+            <ul class="list-unstyled">
+                <li><strong>Monday:</strong> 10:00 AM - 12:00 PM</li>
+                <li><strong>Wednesday:</strong> 2:00 PM - 4:00 PM</li>
+                <li><strong>Friday:</strong> 6:00 PM - 8:00 PM</li>
+            </ul>
+        </div>
+    </div>
+</section>
+@endif
+
+    {{-- <div class="youtube-area video-padding">
         <div class="container">
             <div class="row">
                 @if ($tv->status==1)
                 <div class="col-12">
                     <div class="video-items-active">
                         <div class="video-items text-center">
-                            {{!! $tv->embed_code !!}}
+                            {!! $tv->embed_code !!}
                         </div>
-                        {{-- <div class="video-items text-center">
+                        <div class="video-items text-center">
                             <iframe  src="https://www.youtube.com/embed/rIz00N40bag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                         <div class="video-items text-center">
@@ -681,7 +706,7 @@
                         </div>
                         <div class="video-items text-center">
                             <iframe src="https://www.youtube.com/embed/0VxlQlacWV4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div> --}}
+                        </div>
                     </div>
                 </div>
                 @endif
@@ -736,7 +761,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <!-- End Start youtube -->
     <!--  Recent Articles start -->
