@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\PostController;
 use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\SubcategoryController;
 use App\Http\Controllers\Backend\SubdistrictController;
+use App\Http\Controllers\frontend\ExtraController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -136,7 +137,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
 
 //___Extra Routes___//
-Route::controller(GalleryController::class)->group(function(){
+Route::controller(ExtraController::class)->group(function(){
     Route::get('/lang/english','LangEnglish')->name('lang.english');
     Route::get('/lang/bangla','LangBangla')->name('lang.bangla');
 

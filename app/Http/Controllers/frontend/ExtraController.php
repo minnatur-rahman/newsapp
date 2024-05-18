@@ -13,10 +13,14 @@ class ExtraController extends Controller
         session::get('lang');
         session()->forget('lang');
         sesssion()->put('lang','english');
+        return redirect()->back();
     }
 
     public function LangBangla()
     {
-
+        session::get('lang');
+        session()->forget('lang');
+        sesssion()->put('lang','bangla');
+        return redirect()->back();
     }
 }

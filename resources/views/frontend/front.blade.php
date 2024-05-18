@@ -72,12 +72,24 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            {{ $cat->category_bn }}
+
+                            @if(session()->get('lang')=='english')
+                                {{ $cat->category_en }}
+                            @else
+                                {{ $cat->category_bn }}
+                            @endif
                         </a>
                         <ul class="dropdown-menu">
 
                             @foreach ($subcategory as $subcat)
-                                <li><a class="dropdown-item" href="#">{{ $subcat->subcategory_bn }}</a></li>
+                                <li><a class="dropdown-item" href="#">
+
+                             @if(session()->get('lang')=='english')
+                                {{ $subcat->subcategory_en }}
+                            @else
+                                {{ $subcat->subcategory_bn }}
+                            @endif
+                                </a></li>
                             @endforeach
 
                         </ul>
@@ -89,10 +101,10 @@
             <div class="col-xs-12 col-md-1 col-sm-12">
                 <div class="text-center">
                     <ul>
-                        @if(session()->get('lang')=='bangla')
-                        <li class="version"><a href="{{ route(lang.english) }}" style="text-decoration: none; text-align: center;">English</a></li>
+                        @if(session()->get('lang')=='english')
+                        <li class="version"><a href="{{ route('lang.english') }}" style="text-decoration: none; text-align: center;">Bangla</a></li>
                         @else
-                        <li class="version"><a href="{{ route(lang.bangla) }}" style="text-decoration: none; text-align: center;">English</a></li>
+                        <li class="version"><a href="{{ route('lang.bangla') }}" style="text-decoration: none; text-align: center;">English</a></li>
                         @endif
                     </ul>
                 </div>
