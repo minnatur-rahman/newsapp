@@ -102,9 +102,9 @@
                 <div class="text-center">
                     <ul>
                         @if(session()->get('lang')=='english')
-                        <li class="version"><a href="{{ route('lang.english') }}" style="text-decoration: none; text-align: center;">Bangla</a></li>
+                        <li class="version"><a href="{{ route('lang.bangla') }}" style="text-decoration: none; text-align: center;">Bangla</a></li>
                         @else
-                        <li class="version"><a href="{{ route('lang.bangla') }}" style="text-decoration: none; text-align: center;">English</a></li>
+                        <li class="version"><a href="{{ route('lang.english') }}" style="text-decoration: none; text-align: center;">English</a></li>
                         @endif
                     </ul>
                 </div>
