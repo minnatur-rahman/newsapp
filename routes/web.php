@@ -8,7 +8,6 @@ use App\Http\Controllers\Backend\PostController;
 use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\SubcategoryController;
 use App\Http\Controllers\Backend\SubdistrictController;
-
 use App\Http\Controllers\frontend\ExtraController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
