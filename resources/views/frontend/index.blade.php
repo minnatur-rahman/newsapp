@@ -666,7 +666,7 @@
                 <div class="col-12">
                     <div class="video-items-active">
                         <div class="video-items text-center">
-                            <iframe src="https://www.youtube.com/embed/CicQIuG8hBo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            {{!! $tv->embed_code !!}}
                         </div>
                         {{-- <div class="video-items text-center">
                             <iframe  src="https://www.youtube.com/embed/rIz00N40bag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
